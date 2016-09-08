@@ -1,8 +1,9 @@
 package controllers
 
-import javax.inject.Inject
+import javax.inject.{Inject, Singleton}
 
 import play.api.data.{Form, Forms}
+import play.api.i18n.{Lang, Messages, MessagesApi}
 import play.api.libs.mailer.MailerClient
 import play.api.mvc.{Action, Controller}
 import services.EmailService
@@ -11,9 +12,10 @@ import scala.concurrent.Future
 
 private[controllers] case class ContactParams(name: String, age: Int, email: String, number: String, text: String)
 
-class RegistrationController @Inject()(mailer: MailerClient) extends Controller {
+@Singleton
+class RegistrationController @Inject()(mailer: MailerClient, msgsApi: MessagesApi) extends Controller {
 
-  def register(params: ContactParams) = Action.async { implicit request =>
+  def register = Action.async { implicit request =>
     mapping.bindFromRequest.fold(
       hasErrors = mapInvalidArguments,
       success   = registerContact
@@ -39,6 +41,7 @@ class RegistrationController @Inject()(mailer: MailerClient) extends Controller 
     }(ec)
   }
 
-  private def mapInvalidArguments(f: Form[_]) = Future.successful(BadRequest)
+  private def mapInvalidArguments(f: Form[_]) =
+    Future.successful(BadRequest(f.errorsAsJson(Messages(Lang.defaultLang, msgsApi))))
 
 }

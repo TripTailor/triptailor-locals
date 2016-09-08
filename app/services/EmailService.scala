@@ -13,7 +13,7 @@ class EmailService(email: String, client: MailerClient)(implicit ec: ExecutionCo
     Email(
       subject  = "NUEVO TURISTA!",
       from     = "webmaster@triptailor.co",
-      to       = Seq("sheaney@gmail.com,lsgaleana@gmail.com"),
+      to       = Seq("sheaney@gmail.com", "lsgaleana@gmail.com"),
       bodyText = Some(s"Un nuevo turista se ha registrado!\n$email")
     )
 
