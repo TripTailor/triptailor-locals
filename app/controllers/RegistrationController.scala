@@ -10,7 +10,7 @@ import services.EmailService
 
 import scala.concurrent.Future
 
-private[controllers] case class ContactParams(name: String, age: Int, email: String, number: String, text: String)
+case class ContactParams(name: String, age: Int, email: String, number: String, text: String)
 
 @Singleton
 class RegistrationController @Inject()(mailer: MailerClient, msgsApi: MessagesApi) extends Controller {
@@ -34,7 +34,7 @@ class RegistrationController @Inject()(mailer: MailerClient, msgsApi: MessagesAp
 
   private def registerContact(params: ContactParams) = {
     val ec = scala.concurrent.ExecutionContext.global
-    val service = new EmailService(params.email, mailer)(ec)
+    val service = new EmailService(params, mailer)(ec)
     service.send().map {
       case true  => Ok
       case false => ServiceUnavailable
