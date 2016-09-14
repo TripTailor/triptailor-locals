@@ -15,24 +15,38 @@ case class ContactParams(name: String, age: Int, email: String, number: String, 
 @Singleton
 class RegistrationController @Inject()(mailer: MailerClient, msgsApi: MessagesApi) extends Controller {
 
-  def register = Action.async { implicit request =>
-    mapping.bindFromRequest.fold(
+  def registerNumber = Action.async { implicit request =>
+    numberMapping.bindFromRequest.fold(
       hasErrors = mapInvalidArguments,
       success   = registerContact
     )
   }
 
-  private val mapping = Form(
+  def registerEmail = Action.async { implicit request =>
+    emailMapping.bindFromRequest.fold(
+      hasErrors = mapInvalidArguments,
+      success   = registerContact
+    )
+  }
+
+  private val numberMapping = Form(
     Forms.mapping(
-      "name"   -> Forms.nonEmptyText,
-      "age"    -> Forms.number,
-      "email"  -> Forms.email,
-      "number" -> Forms.nonEmptyText,
-      "questions" -> Forms.text
-    )(ContactParams.apply)(ContactParams.unapply)
+      "name"       -> Forms.nonEmptyText,
+      "categories" -> Forms.seq(Forms.of[Categories.Category]),
+      "number"     -> Forms.nonEmptyText
+    )(NumberForm.apply)(NumberForm.unapply)
   )
 
-  private def registerContact(params: ContactParams) = {
+  private val emailMapping = Form(
+    Forms.mapping(
+      "name"       -> Forms.nonEmptyText,
+      "categories" -> Forms.seq(Forms.of[Categories.Category]),
+      "email"      -> Forms.email,
+      "questions"  -> Forms.text
+    )(EmailForm.apply)(EmailForm.unapply)
+  )
+
+  private def registerContact(params: RegistrationData) = {
     val ec = scala.concurrent.ExecutionContext.global
     val service = new EmailService(params, mailer)(ec)
     service.send().map {
