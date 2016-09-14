@@ -27,3 +27,5 @@ initialCommands in console := """
   val app = loader.load(context)
   Play.start(app)
 """
+
+triggeredMessage in ThisBuild := Watched.clearWhenTriggered
