@@ -3,7 +3,7 @@ var browserify = require('browserify');
 var babelify = require('babelify');
 var source = require('vinyl-source-stream');
 
-var reactTasks = [];
+var reactTasks = ['index'];
 
 reactTasks.forEach(function(task, i, arr) {
   gulp.task(task, function() {
