@@ -18,8 +18,7 @@ var Index = function Index(props) {
     _react2.default.createElement(Hero, null),
     _react2.default.createElement(HIW, null),
     _react2.default.createElement(Testimonials, null),
-    _react2.default.createElement(Locals, null),
-    _react2.default.createElement(LastCTA, null)
+    _react2.default.createElement(Locals, null)
   );
 };
 
@@ -29,13 +28,13 @@ var Hero = function Hero(props) {
     { className: 'hero' },
     _react2.default.createElement(
       'div',
-      { className: 'hero-sub-header' },
-      'Subheader'
+      { className: 'hero-subheader' },
+      'Get recommendations of restaurants, bars and more in Guadalajara'
     ),
     _react2.default.createElement(
       'div',
       { className: 'hero-header' },
-      'Header'
+      'Chat with a local to make it happen'
     ),
     _react2.default.createElement(Cta, null)
   );
@@ -48,7 +47,12 @@ var HIW = function HIW(props) {
     _react2.default.createElement(
       'div',
       { className: 'header' },
-      'How it works'
+      'Get the local insights of Guadalajara'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'subheader' },
+      'Ask anything you want to a local expert'
     ),
     _react2.default.createElement(
       'div',
@@ -59,17 +63,17 @@ var HIW = function HIW(props) {
         _react2.default.createElement(
           'div',
           { className: 'col-md-4' },
-          'Step 1'
+          'Tell us what your interests are'
         ),
         _react2.default.createElement(
           'div',
           { className: 'col-md-4' },
-          'Step 2'
+          'Chat with a local to get recommendations'
         ),
         _react2.default.createElement(
           'div',
           { className: 'col-md-4' },
-          'Step 3'
+          'Happy? Leave an optional tip'
         )
       )
     )
@@ -82,8 +86,13 @@ var Testimonials = function Testimonials(props) {
     { className: 'testimonials' },
     _react2.default.createElement(
       'div',
+      { className: 'subheader' },
+      'Meet some of our ambassadors'
+    ),
+    _react2.default.createElement(
+      'div',
       { className: 'header' },
-      'Testimonials'
+      'We\'re a community of travelers that want you to discover the city the way we know it'
     )
   );
 };
@@ -95,16 +104,8 @@ var Locals = function Locals(props) {
     _react2.default.createElement(
       'div',
       { className: 'header' },
-      'Locals'
+      'We\'re a community of travelers that want you to discover the city the way we know it'
     )
-  );
-};
-
-var LastCTA = function LastCTA(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: 'last-cta' },
-    _react2.default.createElement(Cta, null)
   );
 };
 
@@ -112,7 +113,7 @@ var Cta = function Cta(props) {
   return _react2.default.createElement(
     'button',
     { className: 'cta' },
-    'Sign up - it\'s free'
+    'Get started'
   );
 };
 
