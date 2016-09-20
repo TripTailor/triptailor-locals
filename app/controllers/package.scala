@@ -1,6 +1,6 @@
-import controllers.Categories.Category
 import play.api.data.FormError
 import play.api.data.format.Formatter
+import play.api.libs.json._
 
 package object controllers {
 
@@ -37,8 +37,8 @@ package object controllers {
     questions: String
   ) extends RegistrationData
 
-  private[controllers] implicit val categoryFmt = new Formatter[Categories.Category] {
-    def bind(key: String, data: Map[String, String]): Either[Seq[FormError], Category] = {
+  private[controllers] implicit val categoryFormatter = new Formatter[Categories.Category] {
+    def bind(key: String, data: Map[String, String]): Either[Seq[FormError], Categories.Category] = {
       for {
         Categories.Category(c) ← data.get(key)
       } yield {
@@ -49,7 +49,19 @@ package object controllers {
     }
 
 
-    def unbind(key: String, value: Category): Map[String, String] = ???
+    def unbind(key: String, value: Categories.Category): Map[String, String] = ???
   }
 
+  implicit val categoryFmt = new Format[Categories.Category] {
+    def writes(c: Categories.Category): JsValue = JsString(c.toString)
+
+    def reads(json: JsValue): JsResult[Categories.Category] =
+      json match {
+        case JsString(Categories.Category(c)) => JsSuccess(c)
+        case _ => JsError("Invalid category")
+      }
+  }
+
+  implicit val numberFormFmt = Json.format[NumberForm]
+  implicit val emailFormFmt  = Json.format[EmailForm]
 }
