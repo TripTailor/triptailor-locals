@@ -1,8 +1,11 @@
 .locals-navbar {
   height: 60px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   padding-left: 42px;
   padding-right: 21px;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 .brand {
   font-family: 'Montserrat', sans-serif;
@@ -17,4 +20,37 @@
   float: right;
   line-height: 60px;
   padding: 0 21px;
+}
+
+.hero {
+  height: 650px;
+  background-color: #999;
+  padding: 235px 42px 175px 42px;
+}
+.hero-subheader {
+  width: 482px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  color: #fff;
+}
+.hero-header {
+  margin-top: 13px;
+  width: 336px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+}
+.cta {
+  width: 242px;
+  height: 46px;
+  border-radius: 4px;
+  background-color: #f73f62;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.25);
+  border: none;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  outline: none;
+  margin-top: 17px;
 }
