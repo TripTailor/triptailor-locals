@@ -15,10 +15,33 @@ var Index = function Index(props) {
   return _react2.default.createElement(
     'div',
     null,
+    _react2.default.createElement(NavBar, null),
     _react2.default.createElement(Hero, null),
     _react2.default.createElement(HIW, null),
     _react2.default.createElement(Testimonials, null),
     _react2.default.createElement(Locals, null)
+  );
+};
+
+var NavBar = function NavBar(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'locals-navbar' },
+    _react2.default.createElement(
+      'div',
+      { className: 'navbar-link' },
+      'Get Started'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'navbar-link' },
+      'Contact Us'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'brand' },
+      'Ambassadors'
+    )
   );
 };
 
@@ -36,7 +59,11 @@ var Hero = function Hero(props) {
       { className: 'hero-header' },
       'Chat with a local to make it happen'
     ),
-    _react2.default.createElement(Cta, null)
+    _react2.default.createElement(
+      'button',
+      { className: 'cta' },
+      'Get started'
+    )
   );
 };
 
@@ -81,9 +108,13 @@ var HIW = function HIW(props) {
 };
 
 var Testimonials = function Testimonials(props) {
+  return _react2.default.createElement('div', { className: 'testimonials' });
+};
+
+var Locals = function Locals(props) {
   return _react2.default.createElement(
     'div',
-    { className: 'testimonials' },
+    { className: 'locals' },
     _react2.default.createElement(
       'div',
       { className: 'subheader' },
@@ -94,26 +125,6 @@ var Testimonials = function Testimonials(props) {
       { className: 'header' },
       'We\'re a community of travelers that want you to discover the city the way we know it'
     )
-  );
-};
-
-var Locals = function Locals(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: 'locals' },
-    _react2.default.createElement(
-      'div',
-      { className: 'header' },
-      'We\'re a community of travelers that want you to discover the city the way we know it'
-    )
-  );
-};
-
-var Cta = function Cta(props) {
-  return _react2.default.createElement(
-    'button',
-    { className: 'cta' },
-    'Get started'
   );
 };
 

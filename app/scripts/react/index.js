@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 const Index = (props) => (
   <div>
+    <NavBar />
     <Hero />
     <HIW />
     <Testimonials />
@@ -10,11 +11,19 @@ const Index = (props) => (
   </div>
 );
 
+const NavBar = (props) => (
+  <div className="locals-navbar">
+    <div className="navbar-link">Get Started</div>
+    <div className="navbar-link">Contact Us</div>
+    <div className="brand">Ambassadors</div>
+  </div>
+);
+
 const Hero = (props) => (
   <div className="hero">
     <div className="hero-subheader">Get recommendations of restaurants, bars and more in Guadalajara</div>
     <div className="hero-header">Chat with a local to make it happen</div>
-    <Cta />
+    <button className="cta">Get started</button>
   </div>
 );
 
@@ -34,19 +43,14 @@ const HIW = (props) => (
 
 const Testimonials = (props) => (
   <div className="testimonials">
-    <div className="subheader">Meet some of our ambassadors</div>
-    <div className="header">We're a community of travelers that want you to discover the city the way we know it</div>   
   </div>
 );
 
 const Locals = (props) => (
   <div className="locals">
-     <div className="header">We're a community of travelers that want you to discover the city the way we know it</div>   
+    <div className="subheader">Meet some of our ambassadors</div>
+    <div className="header">We're a community of travelers that want you to discover the city the way we know it</div>   
   </div>
-);
-
-const Cta = (props) => (
-  <button className="cta">Get started</button>
 );
 
 ReactDOM.render(<Index />, document.getElementById("content"));

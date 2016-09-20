@@ -1,0 +1,20 @@
+.locals-navbar {
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-left: 42px;
+  padding-right: 21px;
+}
+.brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: #fff;
+  line-height: 60px;
+}
+.navbar-link {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  float: right;
+  line-height: 60px;
+  padding: 0 21px;
+}
