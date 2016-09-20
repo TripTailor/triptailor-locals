@@ -7,7 +7,7 @@ package object controllers {
   sealed trait RegistrationData
 
   object Categories {
-    val All = Seq(`nightlife`, `food`, `shopping`, `fun`, `architecture`)
+    val All = Seq(`food`, `nightlife`, `culture`, `shopping`, `sightseeing`, `events`, `other`)
 
     sealed trait Category
 
@@ -15,11 +15,13 @@ package object controllers {
       def unapply(name: String) = All.find(_.toString == name)
     }
 
-    case object `nightlife`     extends Category
-    case object `food`          extends Category
-    case object `shopping`      extends Category
-    case object `fun`           extends Category
-    case object `architecture`  extends Category
+    case object `food`        extends Category
+    case object `nightlife`   extends Category
+    case object `culture`     extends Category
+    case object `shopping`    extends Category
+    case object `sightseeing` extends Category
+    case object `events`      extends Category
+    case object `other`       extends Category
   }
 
   case class NumberForm(
