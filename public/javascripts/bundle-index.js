@@ -123,7 +123,39 @@ var HIW = function HIW(props) {
 };
 
 var Testimonials = function Testimonials(props) {
-  return _react2.default.createElement('div', { className: 'testimonials' });
+  return _react2.default.createElement(
+    'div',
+    { className: 'testimonials' },
+    _react2.default.createElement(
+      'div',
+      { className: 'quote-symbol' },
+      '"'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'quote' },
+      'Luis was a huge help in discovering the local sweet spots in Guadalajara. From craft beer and street tacos to house music and underground clubs...'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'user' },
+      _react2.default.createElement(
+        'div',
+        { className: 'user-info' },
+        _react2.default.createElement(
+          'div',
+          { className: 'user-name' },
+          'Alexander Logan'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'user-location' },
+          'Reno, Nevada'
+        )
+      ),
+      _react2.default.createElement('img', { className: 'user-img', src: jsRoutes.controllers.Assets.versioned("images/alex.jpg").url })
+    )
+  );
 };
 
 var Locals = function Locals(props) {

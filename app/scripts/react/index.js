@@ -52,6 +52,15 @@ const HIW = (props) => (
 
 const Testimonials = (props) => (
   <div className="testimonials">
+    <div className="quote-symbol">"</div>
+    <div className="quote">Luis was a huge help in discovering the local sweet spots in Guadalajara. From craft beer and street tacos to house music and underground clubs...</div>
+    <div className="user">
+      <div className="user-info">
+        <div className="user-name">Alexander Logan</div>
+        <div className="user-location">Reno, Nevada</div>
+      </div>
+      <img className="user-img" src={jsRoutes.controllers.Assets.versioned("images/alex.jpg").url} />
+    </div>
   </div>
 );
 
