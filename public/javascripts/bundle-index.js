@@ -73,12 +73,12 @@ var HIW = function HIW(props) {
     { className: 'hiw' },
     _react2.default.createElement(
       'div',
-      { className: 'header' },
+      { className: 'hiw-header' },
       'Get the local insights of Guadalajara'
     ),
     _react2.default.createElement(
       'div',
-      { className: 'subheader' },
+      { className: 'hiw-subheader' },
       'Ask anything you want to a local expert'
     ),
     _react2.default.createElement(
@@ -117,12 +117,12 @@ var Locals = function Locals(props) {
     { className: 'locals' },
     _react2.default.createElement(
       'div',
-      { className: 'subheader' },
+      { className: 'locals-subheader' },
       'Meet some of our ambassadors'
     ),
     _react2.default.createElement(
       'div',
-      { className: 'header' },
+      { className: 'locals-header' },
       'We\'re a community of travelers that want you to discover the city the way we know it'
     )
   );

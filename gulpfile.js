@@ -15,7 +15,7 @@ gulp.task('watch', reactTasks, function () {
   gulp.watch(['app/scripts/react/*.js','app/scripts/*.js'], reactTasks);
 });
 
-gulp.task('default', ['set-dev', 'libs', 'watch']);
+gulp.task('default', ['set-dev', 'libs', 'watch', 'font-awesome']);
 
 var transform = function(entry) {
   return browserify({entries: 'app/scripts/react/' + entry})
@@ -46,12 +46,13 @@ gulp.task('libs', function() {
 //  return gulp.src(['node_modules/jquery-ui/themes/redmond/*/*', "node_modules/jquery-ui/themes/redmond/jquery-ui.min.css"])
 //  .pipe(gulp.dest('public/stylesheets/jquery-ui/'));
 //});
-//gulp.task('font-awesome', function() {
-//  gulp.src("node_modules/font-awesome/css/font-awesome.min.css")
-//  .pipe(gulp.dest('public/stylesheets/'));
-//  gulp.src(["node_modules/font-awesome/fonts/fontawesome-webfont.woff2", "node_modules/font-awesome/fonts/fontawesome-webfont.woff", "node_modules/font-awesome/fonts/fontawesome-webfont.ttf"])
-//  .pipe(gulp.dest('public/fonts/'));
-//});
+
+gulp.task('font-awesome', function() {
+  gulp.src("node_modules/font-awesome/css/font-awesome.min.css")
+  .pipe(gulp.dest('public/stylesheets/'));
+  gulp.src(["node_modules/font-awesome/fonts/fontawesome-webfont.woff2", "node_modules/font-awesome/fonts/fontawesome-webfont.woff", "node_modules/font-awesome/fonts/fontawesome-webfont.ttf"])
+  .pipe(gulp.dest('public/fonts/'));
+});
 
 gulp.task('set-dev', function() {
   return process.env.NODE_ENV = 'development';
