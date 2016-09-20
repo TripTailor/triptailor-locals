@@ -104,7 +104,6 @@ body {
 }
 .quote {
   padding: 0 141px;
-  font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   color: rgba(0, 0, 0, 0.75);
   text-align: center;
@@ -124,12 +123,35 @@ body {
   margin-top: 15px;
 }
 .user-location {
-  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.55);
 }
 .user-name {
   font-size: 18px;
   font-weight: bold;
-  font-family: 'Open Sans', sans-serif;
+}
+
+.locals {
+  padding-bottom: 45px;
+}
+.locals-subheader {
+  margin-top: 79px;
+  font-size: 18px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.55);
+}
+.locals-header {
+  margin-top: 18px;
+  font-size: 28px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.footer {
+  height: 56px;
+  background-color: #323940;
+  padding: 0 42px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 56px;
 }

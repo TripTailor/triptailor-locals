@@ -8,6 +8,7 @@ const Index = (props) => (
     <HIW />
     <Testimonials />
     <Locals />
+    <Footer />
   </div>
 );
 
@@ -15,7 +16,7 @@ const NavBar = (props) => (
   <div className="locals-navbar">
     <div className="navbar-link">Get Started</div>
     <div className="navbar-link">Contact Us</div>
-    <div className="brand">Ambassadors</div>
+    <div className="brand">Contact Locals</div>
   </div>
 );
 
@@ -69,6 +70,10 @@ const Locals = (props) => (
     <div className="locals-subheader">Meet some of our ambassadors</div>
     <div className="locals-header">We're a community of travelers that want you to discover the city the way we know it</div>   
   </div>
+);
+
+const Footer = (props) => (
+  <div className="footer">© Contact Locals 2016. The Apple, and Messenger logos are trademarks of their respective owners.</div>
 );
 
 ReactDOM.render(<Index />, document.getElementById("content"));

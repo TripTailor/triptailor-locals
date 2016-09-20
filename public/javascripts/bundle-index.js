@@ -19,7 +19,8 @@ var Index = function Index(props) {
     _react2.default.createElement(Hero, null),
     _react2.default.createElement(HIW, null),
     _react2.default.createElement(Testimonials, null),
-    _react2.default.createElement(Locals, null)
+    _react2.default.createElement(Locals, null),
+    _react2.default.createElement(Footer, null)
   );
 };
 
@@ -40,7 +41,7 @@ var NavBar = function NavBar(props) {
     _react2.default.createElement(
       'div',
       { className: 'brand' },
-      'Ambassadors'
+      'Contact Locals'
     )
   );
 };
@@ -172,6 +173,14 @@ var Locals = function Locals(props) {
       { className: 'locals-header' },
       'We\'re a community of travelers that want you to discover the city the way we know it'
     )
+  );
+};
+
+var Footer = function Footer(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'footer' },
+    '© Contact Locals 2016. The Apple, and Messenger logos are trademarks of their respective owners.'
   );
 };
 
