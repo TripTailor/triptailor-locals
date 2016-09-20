@@ -31,11 +31,20 @@ const HIW = (props) => (
   <div className="hiw">
     <div className="hiw-header">Get the local insights of Guadalajara</div>
     <div className="hiw-subheader">Ask anything you want to a local expert</div>
-    <div className="container-fluid">
+    <div className="container-fluid hiw-steps">
       <div className="row">
-        <div className="col-md-4">Tell us what your interests are</div>
-        <div className="col-md-4">Chat with a local to get recommendations</div>
-        <div className="col-md-4">Happy? Leave an optional tip</div>
+        <div className="col-md-4 hiw-step-col">
+          <i className="fa fa-hand-o-up" aria-hidden="true"></i>
+          <div className="hiw-step-text">Tell us what your interests are</div>
+        </div>
+        <div className="col-md-4 hiw-step-col">
+          <i className="fa fa-comment-o" aria-hidden="true"></i>
+          <div className="hiw-step-text">Chat with a local to get recommendations</div>
+        </div>
+        <div className="col-md-4 hiw-step-col">
+          <i className="fa fa-heart-o" aria-hidden="true"></i>
+          <div className="hiw-step-text">Happy? Leave an optional tip</div>
+        </div>
       </div>
     </div>
   </div>

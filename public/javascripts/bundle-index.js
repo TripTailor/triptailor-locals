@@ -83,24 +83,39 @@ var HIW = function HIW(props) {
     ),
     _react2.default.createElement(
       'div',
-      { className: 'container-fluid' },
+      { className: 'container-fluid hiw-steps' },
       _react2.default.createElement(
         'div',
         { className: 'row' },
         _react2.default.createElement(
           'div',
-          { className: 'col-md-4' },
-          'Tell us what your interests are'
+          { className: 'col-md-4 hiw-step-col' },
+          _react2.default.createElement('i', { className: 'fa fa-hand-o-up', 'aria-hidden': 'true' }),
+          _react2.default.createElement(
+            'div',
+            { className: 'hiw-step-text' },
+            'Tell us what your interests are'
+          )
         ),
         _react2.default.createElement(
           'div',
-          { className: 'col-md-4' },
-          'Chat with a local to get recommendations'
+          { className: 'col-md-4 hiw-step-col' },
+          _react2.default.createElement('i', { className: 'fa fa-comment-o', 'aria-hidden': 'true' }),
+          _react2.default.createElement(
+            'div',
+            { className: 'hiw-step-text' },
+            'Chat with a local to get recommendations'
+          )
         ),
         _react2.default.createElement(
           'div',
-          { className: 'col-md-4' },
-          'Happy? Leave an optional tip'
+          { className: 'col-md-4 hiw-step-col' },
+          _react2.default.createElement('i', { className: 'fa fa-heart-o', 'aria-hidden': 'true' }),
+          _react2.default.createElement(
+            'div',
+            { className: 'hiw-step-text' },
+            'Happy? Leave an optional tip'
+          )
         )
       )
     )
