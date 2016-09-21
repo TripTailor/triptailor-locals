@@ -18,7 +18,6 @@ body {
   line-height: 60px;
 }
 .navbar-link {
-  font-size: 14px;
   color: #fff;
   float: right;
   line-height: 60px;
@@ -123,7 +122,6 @@ body {
   margin-top: 15px;
 }
 .user-location {
-  font-size: 14px;
   color: rgba(0, 0, 0, 0.55);
 }
 .user-name {
@@ -145,13 +143,37 @@ body {
   font-size: 28px;
   text-align: center;
   color: rgba(0, 0, 0, 0.75);
+  padding: 0 141px;
+}
+.local-profiles {
+  padding: 0 141px;
+  margin-top: 20px;
+}
+.local-profile {
+  margin-top: 30px;
+}
+.local-img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+.local-name {
+  margin-top: 22px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+}
+.local-categories {
+  color: rgba(0, 0, 0, 0.55);
+  text-align: center;
 }
 
 .footer {
   height: 56px;
   background-color: #323940;
   padding: 0 42px;
-  font-size: 14px;
   color: rgba(255, 255, 255, 0.4);
   line-height: 56px;
 }

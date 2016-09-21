@@ -166,12 +166,65 @@ var Locals = function Locals(props) {
     _react2.default.createElement(
       'div',
       { className: 'locals-subheader' },
-      'Meet some of our ambassadors'
+      'meet some of our ambassadors'
     ),
     _react2.default.createElement(
       'div',
       { className: 'locals-header' },
-      'We\'re a community of travelers that want you to discover the city the way we know it'
+      'we\'re a community of travelers that want you to discover the city the way we know it'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'container-fluid local-profiles' },
+      _react2.default.createElement(
+        'div',
+        { className: 'row' },
+        _react2.default.createElement(
+          'div',
+          { className: 'col-md-4 local-profile' },
+          _react2.default.createElement('img', { className: 'local-img' }),
+          _react2.default.createElement(
+            'div',
+            { className: 'local-name' },
+            'Luis Galeana'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'local-categories' },
+            'party, beer & technology'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'col-md-4 local-profile' },
+          _react2.default.createElement('img', { className: 'local-img' }),
+          _react2.default.createElement(
+            'div',
+            { className: 'local-name' },
+            'Serguei Orozco'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'local-categories' },
+            'architecture, beer & running'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'col-md-4 local-profile' },
+          _react2.default.createElement('img', { className: 'local-img' }),
+          _react2.default.createElement(
+            'div',
+            { className: 'local-name' },
+            'Lorena Moreno'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'local-categories' },
+            'art, fashion & dancing'
+          )
+        )
+      )
     )
   );
 };
