@@ -5,11 +5,16 @@ body {
 .locals-navbar {
   height: 60px;
   background-color: rgba(0, 0, 0, 0.5);
-  padding-left: 42px;
-  padding-right: 21px;
+  padding-left: 21px;
   position: absolute;
   top: 0;
   width: 100%;
+}
+@media (min-width: 400px) {
+  .locals-navbar {
+    padding-left: 42px;
+    padding-right: 21px;
+  }
 }
 .brand {
   font-family: 'Montserrat', sans-serif;
@@ -29,16 +34,24 @@ body {
   padding: 235px 42px 175px 42px;
 }
 .hero-subheader {
-  width: 482px;
   font-size: 24px;
   color: #fff;
 }
+@media (min-width: 546px) {
+  .hero-subheader {
+    width: 482px;
+  }
+}
 .hero-header {
   margin-top: 13px;
-  width: 336px;
   font-size: 36px;
   font-weight: bold;
   color: #fff;
+}
+@media (min-width: 420px) {
+  .hero-header {
+    width: 336px;
+  }
 }
 .cta {
   width: 242px;
@@ -55,6 +68,12 @@ body {
 
 .hiw {
   border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+  padding: 0 42px;
+}
+@media (min-width: 768px) {
+  .hiw {
+    padding: 0 141px;
+  }
 }
 .hiw-header {
   font-size: 36px;
@@ -68,7 +87,6 @@ body {
 }
 .hiw-steps {
   margin-top: 45px;
-  padding: 0 141px;
   padding-bottom: 52px;
 }
 .hiw-step-col {
@@ -91,7 +109,14 @@ body {
 
 .testimonials {
   border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+  padding: 0 42px;
   padding-bottom: 60px;
+}
+@media (min-width: 768px) {
+  .testimonials {
+    padding-left: 141px;
+    padding-right: 141px;
+  }
 }
 .quote-symbol {
   margin-top: 65px;
@@ -102,15 +127,21 @@ body {
   color: #506ac5;
 }
 .quote {
-  padding: 0 141px;
   font-size: 24px;
   color: rgba(0, 0, 0, 0.75);
   text-align: center;
 }
 .user {
-  width: 266px;
-  margin: 0 auto;
+  width: 250px;
+  margin-left: -7px;
   margin-top:50px;
+}
+@media (min-width: 350px) {
+  .user {
+    width: 266px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 .user-img {
   width: 75px;
@@ -130,7 +161,14 @@ body {
 }
 
 .locals {
+  padding: 0 42px;
   padding-bottom: 45px;
+}
+@media (min-width: 768px) {
+  .locals {
+    padding-left: 141px;
+    padding-right: 141px;
+  }
 }
 .locals-subheader {
   margin-top: 79px;
@@ -143,10 +181,8 @@ body {
   font-size: 28px;
   text-align: center;
   color: rgba(0, 0, 0, 0.75);
-  padding: 0 141px;
 }
 .local-profiles {
-  padding: 0 141px;
   margin-top: 20px;
 }
 .local-profile {
@@ -171,9 +207,15 @@ body {
 }
 
 .footer {
-  height: 56px;
   background-color: #323940;
-  padding: 0 42px;
+  padding: 15px 42px;
   color: rgba(255, 255, 255, 0.4);
-  line-height: 56px;
+}
+@media (min-width: 768px) {
+  .footer {
+    height: 56px;
+    line-height: 56px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }

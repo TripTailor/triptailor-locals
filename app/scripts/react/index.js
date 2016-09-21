@@ -15,7 +15,7 @@ const Index = (props) => (
 const NavBar = (props) => (
   <div className="locals-navbar">
     <div className="navbar-link">Get Started</div>
-    <div className="navbar-link">Contact Us</div>
+    {/* <div className="navbar-link">Contact Us</div> */}
     <div className="brand">Contact Locals</div>
   </div>
 );

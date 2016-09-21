@@ -35,11 +35,6 @@ var NavBar = function NavBar(props) {
     ),
     _react2.default.createElement(
       'div',
-      { className: 'navbar-link' },
-      'Contact Us'
-    ),
-    _react2.default.createElement(
-      'div',
       { className: 'brand' },
       'Contact Locals'
     )
