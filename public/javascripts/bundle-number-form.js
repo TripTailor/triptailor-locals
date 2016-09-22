@@ -110,7 +110,7 @@ var Category = function (_React$Component2) {
   _createClass(Category, [{
     key: 'toggleCategory',
     value: function toggleCategory(e) {
-      this.setState({ selected: !this.selected });
+      this.setState({ selected: !this.state.selected });
       this.props.toggleCategory(e.target.textContent);
     }
   }, {
@@ -118,7 +118,7 @@ var Category = function (_React$Component2) {
     value: function render() {
       return _react2.default.createElement(
         'span',
-        { className: 'category', onClick: this.toggleCategory.bind(this) },
+        { className: "category" + (this.state.selected ? " selected" : ""), onClick: this.toggleCategory.bind(this) },
         this.props.value,
         ' '
       );

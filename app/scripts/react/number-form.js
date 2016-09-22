@@ -68,12 +68,12 @@ class Category extends React.Component {
     }
   }
   toggleCategory(e) {
-    this.setState({selected: !this.selected});
+    this.setState({selected: !this.state.selected});
     this.props.toggleCategory(e.target.textContent);
   }
   render() {
     return (
-      <span className="category" onClick={this.toggleCategory.bind(this)}>{this.props.value} </span>
+      <span className={"category" + (this.state.selected ? " selected" : "")} onClick={this.toggleCategory.bind(this)}>{this.props.value} </span>
     );
   }
 }
