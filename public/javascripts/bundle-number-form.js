@@ -11,6 +11,12 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _util = require('../util');
+
+var util = _interopRequireWildcard(_util);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -34,7 +40,8 @@ var NumberForm = function (_React$Component) {
       selectedCategories: [],
       number: "",
       nameError: false,
-      numberError: false
+      numberError: false,
+      submitCategories: ""
     };
     _this.categories = ["Food", "Nightlife", "Culture", "Sightseeing", "Shopping", "Events", "Other"];
     return _this;
@@ -61,7 +68,8 @@ var NumberForm = function (_React$Component) {
     key: 'toggleCategory',
     value: function toggleCategory(category) {
       var i = this.state.selectedCategories.indexOf(category);
-      this.setState({ selectedCategories: i < 0 ? [].concat(_toConsumableArray(this.state.selectedCategories), [category]) : [].concat(_toConsumableArray(this.state.selectedCategories.slice(0, i)), _toConsumableArray(this.state.selectedCategories.slice(i + 1))) });
+      var categories = i < 0 ? [].concat(_toConsumableArray(this.state.selectedCategories), [category]) : [].concat(_toConsumableArray(this.state.selectedCategories.slice(0, i)), _toConsumableArray(this.state.selectedCategories.slice(i + 1)));
+      this.setState({ selectedCategories: categories, submitCategories: util.arrayToQuery(categories, "categories") });
     }
   }, {
     key: 'render',
@@ -72,7 +80,8 @@ var NumberForm = function (_React$Component) {
         _react2.default.createElement('input', { name: 'name', type: 'text', className: "name-input" + (this.state.nameError ? " error" : ""), autoComplete: 'off', placeholder: 'Name', value: this.state.name, onChange: this.updateName.bind(this) }),
         _react2.default.createElement(CategoriesSelector, { categories: this.categories, toggleCategory: this.toggleCategory.bind(this) }),
         _react2.default.createElement('input', { name: 'number', type: 'text', className: "number-input" + (this.state.numberError ? " error" : ""), autoComplete: 'off', placeholder: 'Number with country code', value: this.state.number, onChange: this.updateNumber.bind(this) }),
-        _react2.default.createElement('input', { type: 'submit', className: 'submit', value: 'submit' })
+        _react2.default.createElement('input', { type: 'submit', className: 'submit', value: 'submit' }),
+        _react2.default.createElement('input', { name: 'categories', type: 'hidden', value: this.state.submitCategories })
       );
     }
   }]);
@@ -111,7 +120,7 @@ var Category = function (_React$Component2) {
     key: 'toggleCategory',
     value: function toggleCategory(e) {
       this.setState({ selected: !this.state.selected });
-      this.props.toggleCategory(e.target.textContent);
+      this.props.toggleCategory(e.target.textContent.trim());
     }
   }, {
     key: 'render',
@@ -130,4 +139,18 @@ var Category = function (_React$Component2) {
 
 _reactDom2.default.render(_react2.default.createElement(NumberForm, null), document.getElementById("content"));
 
-},{"react":"react","react-dom":"react-dom"}]},{},[1]);
+},{"../util":2,"react":"react","react-dom":"react-dom"}],2:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var arrayToQuery = function arrayToQuery(elements, query) {
+  return elements.map(function (element) {
+    return query + "[]=" + element;
+  }).join("&");
+};
+
+exports.arrayToQuery = arrayToQuery;
+
+},{}]},{},[1]);

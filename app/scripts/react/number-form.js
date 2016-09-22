@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import * as util from '../util';
 
 class NumberForm extends React.Component {
   constructor() {
@@ -10,7 +11,8 @@ class NumberForm extends React.Component {
       selectedCategories: [],
       number: "",
       nameError: false,
-      numberError: false
+      numberError: false,
+      submitCategories: ""
     };
     this.categories = [
       "Food",
@@ -36,7 +38,8 @@ class NumberForm extends React.Component {
   }
   toggleCategory(category) {
     var i = this.state.selectedCategories.indexOf(category);
-    this.setState({selectedCategories: i < 0 ? [...this.state.selectedCategories, category] : [...this.state.selectedCategories.slice(0, i), ...this.state.selectedCategories.slice(i + 1)]});
+    var categories = i < 0 ? [...this.state.selectedCategories, category] : [...this.state.selectedCategories.slice(0, i), ...this.state.selectedCategories.slice(i + 1)];
+    this.setState({selectedCategories: categories, submitCategories: util.arrayToQuery(categories, "categories")});
   }
   render() {
     return(
@@ -45,6 +48,7 @@ class NumberForm extends React.Component {
         <CategoriesSelector categories={this.categories} toggleCategory={this.toggleCategory.bind(this)} />
         <input name="number" type="text" className={"number-input" + (this.state.numberError ? " error" : "")} autoComplete="off" placeholder="Number with country code" value={this.state.number} onChange={this.updateNumber.bind(this)} />
         <input type="submit" className="submit" value="submit" />
+        <input name="categories" type="hidden" value={this.state.submitCategories} />
       </form>
     );
   }
@@ -69,7 +73,7 @@ class Category extends React.Component {
   }
   toggleCategory(e) {
     this.setState({selected: !this.state.selected});
-    this.props.toggleCategory(e.target.textContent);
+    this.props.toggleCategory(e.target.textContent.trim());
   }
   render() {
     return (
