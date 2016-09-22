@@ -3,7 +3,7 @@ var browserify = require('browserify');
 var babelify = require('babelify');
 var source = require('vinyl-source-stream');
 
-var reactTasks = ['index'];
+var reactTasks = ['index', 'number-form'];
 
 reactTasks.forEach(function(task, i, arr) {
   gulp.task(task, function() {

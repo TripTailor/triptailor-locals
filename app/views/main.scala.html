@@ -19,7 +19,8 @@
 
   <!-- js reverse routing -->
   @helper.javascriptRouter("jsRoutes")(
-    routes.javascript.Assets.versioned
+    routes.javascript.Assets.versioned,
+    routes.javascript.HomeController.numberForm
   )
 
   <script src="@routes.Assets.versioned("javascripts/libs.js")" type="text/javascript"></script>
