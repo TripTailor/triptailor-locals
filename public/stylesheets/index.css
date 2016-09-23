@@ -127,7 +127,7 @@ body {
 }
 
 .hiw {
-  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.8);
   padding: 0 42px;
   padding-top: 80px;
   position: relative;
@@ -172,7 +172,7 @@ body {
 }
 
 .testimonials {
-  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.8);
   padding: 0 42px;
   padding-bottom: 60px;
 }
@@ -211,6 +211,7 @@ body {
   width: 75px;
   height: 75px;
   border-radius: 50%;
+  border: 1px rgba(0, 0, 0, 0.08);
 }
 .user-info {
   float: right;

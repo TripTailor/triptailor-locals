@@ -205,7 +205,7 @@ var Locals = function Locals(props) {
         _react2.default.createElement(
           'div',
           { className: 'col-md-4 local-profile' },
-          _react2.default.createElement('img', { className: 'local-img' }),
+          _react2.default.createElement('img', { src: jsRoutes.controllers.Assets.versioned("images/photo-luis.png").url, className: 'local-img' }),
           _react2.default.createElement(
             'div',
             { className: 'local-name' },
@@ -220,7 +220,7 @@ var Locals = function Locals(props) {
         _react2.default.createElement(
           'div',
           { className: 'col-md-4 local-profile' },
-          _react2.default.createElement('img', { className: 'local-img' }),
+          _react2.default.createElement('img', { src: jsRoutes.controllers.Assets.versioned("images/photo-cheky.png").url, className: 'local-img' }),
           _react2.default.createElement(
             'div',
             { className: 'local-name' },
@@ -235,7 +235,7 @@ var Locals = function Locals(props) {
         _react2.default.createElement(
           'div',
           { className: 'col-md-4 local-profile' },
-          _react2.default.createElement('img', { className: 'local-img' }),
+          _react2.default.createElement('img', { src: jsRoutes.controllers.Assets.versioned("images/photo-lore.png").url, className: 'local-img' }),
           _react2.default.createElement(
             'div',
             { className: 'local-name' },
