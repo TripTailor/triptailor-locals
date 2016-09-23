@@ -22,9 +22,12 @@ const NavBar = (props) => (
 
 const Hero = (props) => (
   <div className="hero">
-    <div className="hero-subheader">Get recommendations of restaurants, bars and more in Guadalajara</div>
-    <div className="hero-header">Chat with a local to make it happen</div>
-    <button className="cta">Get started</button>
+    <div className="hero-layer"></div>
+    <div className="hero-content">
+      <div className="hero-subheader">Get recommendations of restaurants, bars and more in Guadalajara</div>
+      <div className="hero-header">Chat with a local to make it happen</div>
+      <button className="cta">Get started</button>
+    </div>
   </div>
 );
 

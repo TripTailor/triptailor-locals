@@ -55,20 +55,25 @@ var Hero = function Hero(props) {
   return _react2.default.createElement(
     'div',
     { className: 'hero' },
+    _react2.default.createElement('div', { className: 'hero-layer' }),
     _react2.default.createElement(
       'div',
-      { className: 'hero-subheader' },
-      'Get recommendations of restaurants, bars and more in Guadalajara'
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: 'hero-header' },
-      'Chat with a local to make it happen'
-    ),
-    _react2.default.createElement(
-      'button',
-      { className: 'cta' },
-      'Get started'
+      { className: 'hero-content' },
+      _react2.default.createElement(
+        'div',
+        { className: 'hero-subheader' },
+        'Get recommendations of restaurants, bars and more in Guadalajara'
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'hero-header' },
+        'Chat with a local to make it happen'
+      ),
+      _react2.default.createElement(
+        'button',
+        { className: 'cta' },
+        'Get started'
+      )
     )
   );
 };
