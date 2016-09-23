@@ -43,7 +43,7 @@ var NumberForm = function (_React$Component) {
       numberError: false,
       submitCategories: ""
     };
-    _this.categories = ["Food", "Nightlife", "Culture", "Sightseeing", "Shopping", "Events", "Other"];
+    _this.categories = ["food", "nightlife", "culture", "sightseeing", "shopping", "events", "other"];
     return _this;
   }
 
@@ -80,8 +80,7 @@ var NumberForm = function (_React$Component) {
         _react2.default.createElement('input', { name: 'name', type: 'text', className: "name-input" + (this.state.nameError ? " error" : ""), autoComplete: 'off', placeholder: 'Name', value: this.state.name, onChange: this.updateName.bind(this) }),
         _react2.default.createElement(CategoriesSelector, { categories: this.categories, toggleCategory: this.toggleCategory.bind(this) }),
         _react2.default.createElement('input', { name: 'number', type: 'text', className: "number-input" + (this.state.numberError ? " error" : ""), autoComplete: 'off', placeholder: 'Number with country code', value: this.state.number, onChange: this.updateNumber.bind(this) }),
-        _react2.default.createElement('input', { type: 'submit', className: 'submit', value: 'submit' }),
-        _react2.default.createElement('input', { name: 'categories', type: 'hidden', value: this.state.submitCategories })
+        _react2.default.createElement('input', { type: 'submit', className: 'submit', value: 'submit' })
       );
     }
   }]);
@@ -120,14 +119,14 @@ var Category = function (_React$Component2) {
     key: 'toggleCategory',
     value: function toggleCategory(e) {
       this.setState({ selected: !this.state.selected });
-      this.props.toggleCategory(e.target.textContent.trim());
     }
   }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'span',
-        { className: "category" + (this.state.selected ? " selected" : ""), onClick: this.toggleCategory.bind(this) },
+        'label',
+        { className: "category" + (this.state.selected ? " selected" : "") },
+        _react2.default.createElement('input', { name: 'categories[]', type: 'checkbox', className: 'category-box', checked: this.state.selected, value: this.props.value, onChange: this.toggleCategory.bind(this) }),
         this.props.value,
         ' '
       );

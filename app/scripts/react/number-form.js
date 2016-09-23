@@ -15,13 +15,13 @@ class NumberForm extends React.Component {
       submitCategories: ""
     };
     this.categories = [
-      "Food",
-      "Nightlife",
-      "Culture",
-      "Sightseeing",
-      "Shopping",
-      "Events",
-      "Other"
+      "food",
+      "nightlife",
+      "culture",
+      "sightseeing",
+      "shopping",
+      "events",
+      "other"
     ]
   }
   updateName(e) {
@@ -48,7 +48,6 @@ class NumberForm extends React.Component {
         <CategoriesSelector categories={this.categories} toggleCategory={this.toggleCategory.bind(this)} />
         <input name="number" type="text" className={"number-input" + (this.state.numberError ? " error" : "")} autoComplete="off" placeholder="Number with country code" value={this.state.number} onChange={this.updateNumber.bind(this)} />
         <input type="submit" className="submit" value="submit" />
-        <input name="categories" type="hidden" value={this.state.submitCategories} />
       </form>
     );
   }
@@ -73,11 +72,10 @@ class Category extends React.Component {
   }
   toggleCategory(e) {
     this.setState({selected: !this.state.selected});
-    this.props.toggleCategory(e.target.textContent.trim());
   }
   render() {
     return (
-      <span className={"category" + (this.state.selected ? " selected" : "")} onClick={this.toggleCategory.bind(this)}>{this.props.value} </span>
+      <label className={"category" + (this.state.selected ? " selected" : "")}><input name="categories[]" type="checkbox" className="category-box" checked={this.state.selected} value={this.props.value} onChange={this.toggleCategory.bind(this)} />{this.props.value} </label>
     );
   }
 }

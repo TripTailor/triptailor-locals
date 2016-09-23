@@ -4,3 +4,6 @@
 .selected {
   background-color: #aaa;
 }
+.category-box {
+  display: none;
+}
