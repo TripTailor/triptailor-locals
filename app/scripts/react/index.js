@@ -14,7 +14,7 @@ const Index = (props) => (
 
 const NavBar = (props) => (
   <div className="locals-navbar">
-    <div className="navbar-link">Get Started</div>
+    <div className="navbar-link"><a href={jsRoutes.controllers.HomeController.numberForm().url}>Get Started</a></div>
     {/* <div className="navbar-link">Contact Us</div> */}
     <div className="brand"><a href={jsRoutes.controllers.HomeController.index().url}>contact<span className="brand-locals">locals</span>.com</a></div>
   </div>
@@ -28,7 +28,7 @@ const Hero = (props) => (
         <div className="col-md-6">
           <div className="hero-subheader">Get recommendations of restaurants, bars and more in Guadalajara</div>
           <div className="hero-header">Chat with a local to make it happen</div>
-          <button className="cta">Get started</button>
+          <a href={jsRoutes.controllers.HomeController.numberForm().url} className="cta">Get started</a>
         </div>
         <div className="col-md-6 col-whatsapp">
           <img src={jsRoutes.controllers.Assets.versioned("images/whatsapp.gif").url} className="whatsapp" />

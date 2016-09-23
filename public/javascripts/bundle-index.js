@@ -31,7 +31,11 @@ var NavBar = function NavBar(props) {
     _react2.default.createElement(
       'div',
       { className: 'navbar-link' },
-      'Get Started'
+      _react2.default.createElement(
+        'a',
+        { href: jsRoutes.controllers.HomeController.numberForm().url },
+        'Get Started'
+      )
     ),
     _react2.default.createElement(
       'div',
@@ -76,8 +80,8 @@ var Hero = function Hero(props) {
             'Chat with a local to make it happen'
           ),
           _react2.default.createElement(
-            'button',
-            { className: 'cta' },
+            'a',
+            { href: jsRoutes.controllers.HomeController.numberForm().url, className: 'cta' },
             'Get started'
           )
         ),
