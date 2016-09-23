@@ -36,7 +36,17 @@ var NavBar = function NavBar(props) {
     _react2.default.createElement(
       'div',
       { className: 'brand' },
-      'Contact Locals'
+      _react2.default.createElement(
+        'a',
+        { href: jsRoutes.controllers.HomeController.index().url },
+        'contact',
+        _react2.default.createElement(
+          'span',
+          { className: 'brand-locals' },
+          'locals'
+        ),
+        '.com'
+      )
     )
   );
 };

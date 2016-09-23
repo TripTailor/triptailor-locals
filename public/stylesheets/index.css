@@ -5,28 +5,33 @@ body {
 .locals-navbar {
   height: 60px;
   background-color: rgba(0, 0, 0, 0.5);
-  padding-left: 21px;
+  padding-left: 42px;
+  padding-right: 21px;
   position: absolute;
   top: 0;
   width: 100%;
 }
-@media (min-width: 400px) {
-  .locals-navbar {
-    padding-left: 42px;
-    padding-right: 21px;
-  }
-}
-.brand {
+.brand a {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   color: #fff;
   line-height: 60px;
+  text-decoration: none;
+}
+.brand-locals {
+  color: #f73f62;
 }
 .navbar-link {
   color: #fff;
   float: right;
   line-height: 60px;
   padding: 0 21px;
+  display: none;
+}
+@media (min-width: 400px) {
+  .navbar-link {
+    display: block;
+  }
 }
 
 .hero {
