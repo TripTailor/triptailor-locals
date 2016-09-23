@@ -6,11 +6,18 @@ body {
   height: 60px;
   background-color: rgba(0, 0, 0, 0.5);
   padding-left: 42px;
-  padding-right: 21px;
+  padding-right: 42px;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 1;
+  text-align: center;
+}
+@media (min-width: 400px) {
+  .locals-navbar {
+    text-align: left;
+    padding-right: 21px;
+  }
 }
 .brand a {
   font-family: 'Montserrat', sans-serif;
@@ -38,12 +45,23 @@ body {
 .hero {
   background: url(../images/hero.jpg) no-repeat center center;
   background-size: cover;
-  padding: 235px 42px 175px 42px;
+  padding: 110px 10px 0 10px;
   position: relative;
+}
+@media (min-width: 768px) {
+  .hero {
+    padding: 235px 42px 0 42px;
+  }
 }
 .hero-content {
   position: relative;
   z-index: 1;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .hero-content {
+    text-align: left;
+  }
 }
 .hero-subheader {
   font-size: 24px;
@@ -65,8 +83,25 @@ body {
     width: 336px;
   }
 }
+.col-whatsapp {
+  height: 510px;
+  overflow: hidden;
+  text-align: center;
+  margin-top: 30px;
+}
+@media (min-width: 768px) {
+  .col-whatsapp {
+    text-align: right;
+    margin-top: -120px;
+  }
+}
+.whatsapp {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
 .cta {
-  width: 242px;
+  width: 100%;
   height: 46px;
   border-radius: 4px;
   background-color: #f73f62;
@@ -76,6 +111,11 @@ body {
   font-size: 18px;
   outline: none;
   margin-top: 17px;
+}
+@media (min-width: 768px) {
+  .cta {
+    width: 242px;
+  }
 }
 .hero-layer {
   position: absolute;
@@ -89,16 +129,20 @@ body {
 .hiw {
   border-bottom: solid 1px rgba(0, 0, 0, 0.2);
   padding: 0 42px;
+  padding-top: 80px;
+  position: relative;
+  background-color: #fff;
+  z-index: 1;
 }
 @media (min-width: 768px) {
   .hiw {
     padding: 0 141px;
+    padding-top: 80px;
   }
 }
 .hiw-header {
   font-size: 36px;
   text-align: center;
-  margin-top: 80px;
 }
 .hiw-subheader {
   margin-top: 15px;

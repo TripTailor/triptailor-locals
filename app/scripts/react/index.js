@@ -23,10 +23,17 @@ const NavBar = (props) => (
 const Hero = (props) => (
   <div className="hero">
     <div className="hero-layer"></div>
-    <div className="hero-content">
-      <div className="hero-subheader">Get recommendations of restaurants, bars and more in Guadalajara</div>
-      <div className="hero-header">Chat with a local to make it happen</div>
-      <button className="cta">Get started</button>
+    <div className="container-fluid hero-content">
+      <div className="row">
+        <div className="col-md-6">
+          <div className="hero-subheader">Get recommendations of restaurants, bars and more in Guadalajara</div>
+          <div className="hero-header">Chat with a local to make it happen</div>
+          <button className="cta">Get started</button>
+        </div>
+        <div className="col-md-6 col-whatsapp">
+          <img src={jsRoutes.controllers.Assets.versioned("images/whatsapp.gif").url} className="whatsapp" />
+        </div>
+      </div>
     </div>
   </div>
 );

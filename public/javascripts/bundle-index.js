@@ -58,21 +58,34 @@ var Hero = function Hero(props) {
     _react2.default.createElement('div', { className: 'hero-layer' }),
     _react2.default.createElement(
       'div',
-      { className: 'hero-content' },
+      { className: 'container-fluid hero-content' },
       _react2.default.createElement(
         'div',
-        { className: 'hero-subheader' },
-        'Get recommendations of restaurants, bars and more in Guadalajara'
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'hero-header' },
-        'Chat with a local to make it happen'
-      ),
-      _react2.default.createElement(
-        'button',
-        { className: 'cta' },
-        'Get started'
+        { className: 'row' },
+        _react2.default.createElement(
+          'div',
+          { className: 'col-md-6' },
+          _react2.default.createElement(
+            'div',
+            { className: 'hero-subheader' },
+            'Get recommendations of restaurants, bars and more in Guadalajara'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'hero-header' },
+            'Chat with a local to make it happen'
+          ),
+          _react2.default.createElement(
+            'button',
+            { className: 'cta' },
+            'Get started'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'col-md-6 col-whatsapp' },
+          _react2.default.createElement('img', { src: jsRoutes.controllers.Assets.versioned("images/whatsapp.gif").url, className: 'whatsapp' })
+        )
       )
     )
   );
