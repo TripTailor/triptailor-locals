@@ -30,15 +30,6 @@ var NavBar = function NavBar(props) {
     { className: 'locals-navbar' },
     _react2.default.createElement(
       'div',
-      { className: 'navbar-link' },
-      _react2.default.createElement(
-        'a',
-        { href: jsRoutes.controllers.HomeController.numberForm().url },
-        'Get Started'
-      )
-    ),
-    _react2.default.createElement(
-      'div',
       { className: 'brand' },
       _react2.default.createElement(
         'a',
@@ -72,7 +63,7 @@ var Hero = function Hero(props) {
           _react2.default.createElement(
             'div',
             { className: 'hero-subheader' },
-            'Get recommendations of restaurants, bars and more in Guadalajara'
+            'Ask for restaurants, bars, anything in Guadalajara'
           ),
           _react2.default.createElement(
             'div',
@@ -102,12 +93,7 @@ var HIW = function HIW(props) {
     _react2.default.createElement(
       'div',
       { className: 'hiw-header' },
-      'Get the local insights of Guadalajara'
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: 'hiw-subheader' },
-      'Ask anything you want to a local expert'
+      'How it works'
     ),
     _react2.default.createElement(
       'div',
@@ -122,7 +108,7 @@ var HIW = function HIW(props) {
           _react2.default.createElement(
             'div',
             { className: 'hiw-step-text' },
-            'Tell us what your interests are'
+            'Tell us your interests and get assigned a local'
           )
         ),
         _react2.default.createElement(
@@ -132,7 +118,7 @@ var HIW = function HIW(props) {
           _react2.default.createElement(
             'div',
             { className: 'hiw-step-text' },
-            'Chat with a local to get recommendations'
+            'Chat with the local to get the best insights'
           )
         ),
         _react2.default.createElement(
@@ -142,7 +128,7 @@ var HIW = function HIW(props) {
           _react2.default.createElement(
             'div',
             { className: 'hiw-step-text' },
-            'Happy? Leave an optional tip'
+            'Happy? Leave an optional tip to the local'
           )
         )
       )
@@ -275,7 +261,7 @@ var Footer = function Footer(props) {
   return _react2.default.createElement(
     'div',
     { className: 'footer' },
-    '© Contact Locals 2016. The Apple, and Messenger logos are trademarks of their respective owners.'
+    '© Contact Locals 2016.'
   );
 };
 

@@ -14,7 +14,7 @@ const Index = (props) => (
 
 const NavBar = (props) => (
   <div className="locals-navbar">
-    <div className="navbar-link"><a href={jsRoutes.controllers.HomeController.numberForm().url}>Get Started</a></div>
+    {/* <div className="navbar-link"><a href={jsRoutes.controllers.HomeController.numberForm().url}>Get Started</a></div> */}
     {/* <div className="navbar-link">Contact Us</div> */}
     <div className="brand"><a href={jsRoutes.controllers.HomeController.index().url}>contact<span className="brand-locals">locals</span>.com</a></div>
   </div>
@@ -26,7 +26,7 @@ const Hero = (props) => (
     <div className="container-fluid hero-content">
       <div className="row">
         <div className="col-md-6">
-          <div className="hero-subheader">Get recommendations of restaurants, bars and more in Guadalajara</div>
+          <div className="hero-subheader">Ask for restaurants, bars, anything in Guadalajara</div>
           <div className="hero-header">Chat with a local to make it happen</div>
           <a href={jsRoutes.controllers.HomeController.numberForm().url} className="cta">Get started</a>
         </div>
@@ -40,21 +40,20 @@ const Hero = (props) => (
 
 const HIW = (props) => (
   <div className="hiw">
-    <div className="hiw-header">Get the local insights of Guadalajara</div>
-    <div className="hiw-subheader">Ask anything you want to a local expert</div>
+    <div className="hiw-header">How it works</div>
     <div className="container-fluid hiw-steps">
       <div className="row">
         <div className="col-md-4 hiw-step-col">
           <i className="fa fa-hand-o-up" aria-hidden="true"></i>
-          <div className="hiw-step-text">Tell us what your interests are</div>
+          <div className="hiw-step-text">Tell us your interests and get assigned a local</div>
         </div>
         <div className="col-md-4 hiw-step-col">
           <i className="fa fa-comment-o" aria-hidden="true"></i>
-          <div className="hiw-step-text">Chat with a local to get recommendations</div>
+          <div className="hiw-step-text">Chat with the local to get the best insights</div>
         </div>
         <div className="col-md-4 hiw-step-col">
           <i className="fa fa-heart-o" aria-hidden="true"></i>
-          <div className="hiw-step-text">Happy? Leave an optional tip</div>
+          <div className="hiw-step-text">Happy? Leave an optional tip to the local</div>
         </div>
       </div>
     </div>
@@ -107,7 +106,7 @@ const Locals = (props) => (
 );
 
 const Footer = (props) => (
-  <div className="footer">© Contact Locals 2016. The Apple, and Messenger logos are trademarks of their respective owners.</div>
+  <div className="footer">© Contact Locals 2016.</div>
 );
 
 ReactDOM.render(<Index />, document.getElementById("content"));
