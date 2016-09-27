@@ -157,7 +157,7 @@ var Testimonials = function Testimonials(props) {
     _react2.default.createElement(
       'div',
       { className: 'quote-symbol' },
-      '"'
+      _react2.default.createElement('i', { className: 'fa fa-quote-left', 'aria-hidden': 'true' })
     ),
     _react2.default.createElement(
       'div',
@@ -193,7 +193,7 @@ var Locals = function Locals(props) {
     _react2.default.createElement(
       'div',
       { className: 'locals-subheader' },
-      'meet some of our ambassadors'
+      'meet some of our locals'
     ),
     _react2.default.createElement(
       'div',
@@ -208,7 +208,7 @@ var Locals = function Locals(props) {
         { className: 'row' },
         _react2.default.createElement(
           'div',
-          { className: 'col-md-4 local-profile' },
+          { className: 'col-md-3 local-profile' },
           _react2.default.createElement('img', { src: jsRoutes.controllers.Assets.versioned("images/photo-luis.png").url, className: 'local-img' }),
           _react2.default.createElement(
             'div',
@@ -223,7 +223,7 @@ var Locals = function Locals(props) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'col-md-4 local-profile' },
+          { className: 'col-md-3 local-profile' },
           _react2.default.createElement('img', { src: jsRoutes.controllers.Assets.versioned("images/photo-cheky.png").url, className: 'local-img' }),
           _react2.default.createElement(
             'div',
@@ -233,12 +233,12 @@ var Locals = function Locals(props) {
           _react2.default.createElement(
             'div',
             { className: 'local-categories' },
-            'architecture, beer & running'
+            'architecture, food & running'
           )
         ),
         _react2.default.createElement(
           'div',
-          { className: 'col-md-4 local-profile' },
+          { className: 'col-md-3 local-profile' },
           _react2.default.createElement('img', { src: jsRoutes.controllers.Assets.versioned("images/photo-lore.png").url, className: 'local-img' }),
           _react2.default.createElement(
             'div',
@@ -248,7 +248,22 @@ var Locals = function Locals(props) {
           _react2.default.createElement(
             'div',
             { className: 'local-categories' },
-            'art, fashion & dancing'
+            'coffee, local design & kitsch'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'col-md-3 local-profile' },
+          _react2.default.createElement('img', { src: jsRoutes.controllers.Assets.versioned("images/photo-gus.png").url, className: 'local-img' }),
+          _react2.default.createElement(
+            'div',
+            { className: 'local-name' },
+            'Gustavo Dávila'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'local-categories' },
+            'food, music & art'
           )
         )
       )

@@ -195,16 +195,17 @@ body {
 }
 .quote-symbol {
   margin-top: 65px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 64px;
-  font-weight: bold;
   text-align: center;
+}
+.quote-symbol i {
+  font-size: 64px;
   color: #506ac5;
 }
 .quote {
   font-size: 24px;
   color: rgba(0, 0, 0, 0.75);
   text-align: center;
+  margin-top: 30px;
 }
 .user {
   width: 250px;
