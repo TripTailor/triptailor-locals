@@ -13,8 +13,8 @@ class EmailService(contact: RegistrationData, client: MailerClient)(implicit ec:
   private def buildEmail =
     Email(
       subject  = "NUEVO TURISTA!",
-      from     = "webmaster@triptailor.co",
-      to       = Seq("sheaney@gmail.com"),
+      from     = "webmaster@contactlocals.com",
+      to       = Seq("heaney@contactlocals.com", "luis@contactlocals.com"),
       bodyHtml = Some(buildEmailHtml.toString)
     )
 

@@ -1,15 +1,15 @@
 package controllers
 
-import javax.inject._
-import play.api._
-import play.api.mvc._
+import javax.inject.{Singleton, Inject}
+import play.api.Environment
+import play.api.mvc.{Controller, Action}
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
  * application's home page.
  */
 @Singleton
-class HomeController @Inject() extends Controller {
+class HomeController @Inject() (implicit env: Environment) extends Controller {
 
   /**
    * Create an Action to render an HTML page with a welcome message.
