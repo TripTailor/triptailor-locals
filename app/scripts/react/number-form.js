@@ -47,6 +47,9 @@ export default class NumberForm extends React.Component {
   stopAtForm(e) {
     e.stopPropagation();
   }
+  toggleTooltip(e) {
+    this.tooltip.classList.toggle("tooltip-visible");
+  }
   render() {
     return(
       <div ref={(container) => this.container = container} className="number-form-container" onClick={this.props.toggleSelf}>
@@ -56,7 +59,7 @@ export default class NumberForm extends React.Component {
           <input name="name" type="text" className={"name-input" + (this.state.nameError ? " error" : "")} autoComplete="off" placeholder="i.e. John Doe" value={this.state.name} onChange={this.updateName.bind(this)} />
           <div className="header"><strong>Interests</strong></div>
           <CategoriesSelector categories={this.categories} toggleCategory={this.toggleCategory.bind(this)} />
-          <div className="header"><strong>Mobile Number</strong> (with country code) <i className="fa fa-question-circle" aria-hidden="true"></i></div>
+          <div className="header"><strong>Mobile Number</strong> (with country code) <i className="fa fa-question-circle" aria-hidden="true" onClick={this.toggleTooltip.bind(this)} onMouseEnter={this.toggleTooltip.bind(this)} onMouseLeave={this.toggleTooltip.bind(this)}></i><div ref={(tooltip) => this.tooltip = tooltip} className="tooltip">A local will get in touch with you</div></div>
           <input name="number" type="text" className={"number-input" + (this.state.numberError ? " error" : "")} autoComplete="off" placeholder="+1 202 555 0191" value={this.state.number} onChange={this.updateNumber.bind(this)} />
           <input type="submit" className="submit" value="Submit" />
         </form>

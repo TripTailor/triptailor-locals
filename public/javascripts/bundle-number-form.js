@@ -86,6 +86,11 @@ var NumberForm = function (_React$Component) {
       e.stopPropagation();
     }
   }, {
+    key: 'toggleTooltip',
+    value: function toggleTooltip(e) {
+      this.tooltip.classList.toggle("tooltip-visible");
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -137,7 +142,14 @@ var NumberForm = function (_React$Component) {
               'Mobile Number'
             ),
             ' (with country code) ',
-            _react2.default.createElement('i', { className: 'fa fa-question-circle', 'aria-hidden': 'true' })
+            _react2.default.createElement('i', { className: 'fa fa-question-circle', 'aria-hidden': 'true', onClick: this.toggleTooltip.bind(this), onMouseEnter: this.toggleTooltip.bind(this), onMouseLeave: this.toggleTooltip.bind(this) }),
+            _react2.default.createElement(
+              'div',
+              { ref: function ref(tooltip) {
+                  return _this2.tooltip = tooltip;
+                }, className: 'tooltip' },
+              'A local will get in touch with you'
+            )
           ),
           _react2.default.createElement('input', { name: 'number', type: 'text', className: "number-input" + (this.state.numberError ? " error" : ""), autoComplete: 'off', placeholder: '+1 202 555 0191', value: this.state.number, onChange: this.updateNumber.bind(this) }),
           _react2.default.createElement('input', { type: 'submit', className: 'submit', value: 'Submit' })
