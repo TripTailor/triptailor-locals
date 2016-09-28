@@ -55,13 +55,13 @@ export default class NumberForm extends React.Component {
       <div ref={(container) => this.container = container} className="number-form-container" onClick={this.props.toggleSelf}>
         <form action={jsRoutes.controllers.RegistrationController.registerNumber().url} method="POST" className="number-form" onSubmit={this.validateForm.bind(this)} onClick={this.stopAtForm}>
           <div className="mobile-close">Get Started<div className="mobile-close-x" onClick={this.props.toggleSelf}>X</div></div>
-          <div className="header"><strong>Full Name</strong></div>
+          <div className="number-form-header"><strong>Full Name</strong></div>
           <input name="name" type="text" className={"name-input" + (this.state.nameError ? " error" : "")} autoComplete="off" placeholder="i.e. John Doe" value={this.state.name} onChange={this.updateName.bind(this)} />
-          <div className="header"><strong>Interests</strong></div>
+          <div className="number-form-header"><strong>Interests</strong></div>
           <CategoriesSelector categories={this.categories} toggleCategory={this.toggleCategory.bind(this)} />
-          <div className="header"><strong>Mobile Number</strong> (with country code) <i className="fa fa-question-circle" aria-hidden="true" onClick={this.toggleTooltip.bind(this)} onMouseEnter={this.toggleTooltip.bind(this)} onMouseLeave={this.toggleTooltip.bind(this)}></i><div ref={(tooltip) => this.tooltip = tooltip} className="tooltip">A local will get in touch with you</div></div>
+          <div className="number-form-header"><strong>Mobile Number</strong> (with country code) <i className="fa fa-question-circle" aria-hidden="true" onClick={this.toggleTooltip.bind(this)} onMouseEnter={this.toggleTooltip.bind(this)} onMouseLeave={this.toggleTooltip.bind(this)}></i><div ref={(tooltip) => this.tooltip = tooltip} className="tooltip">A local will get in touch with you</div></div>
           <input name="number" type="text" className={"number-input" + (this.state.numberError ? " error" : "")} autoComplete="off" placeholder="+1 202 555 0191" value={this.state.number} onChange={this.updateNumber.bind(this)} />
-          <input type="submit" className="submit" value="Submit" />
+          <input type="submit" className="number-form-submit" value="Submit" />
         </form>
       </div>
     );

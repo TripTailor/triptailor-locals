@@ -52,7 +52,7 @@
   font-weight: bold;
 }
 
-.header {
+.number-form-header {
   margin-top: 20px;
 }
 .number-form input[type="text"] {
@@ -85,7 +85,7 @@
   color: rgba(0, 0, 0, 0.75);
   cursor: pointer;
 }
-.submit {
+.number-form-submit {
   display: block;
   border-radius: 4px;
   background-color: #f73f62;
