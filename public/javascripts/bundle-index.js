@@ -407,10 +407,39 @@ var NumberForm = function (_React$Component) {
         _react2.default.createElement(
           'form',
           { action: jsRoutes.controllers.RegistrationController.registerNumber().url, method: 'POST', className: 'number-form', onSubmit: this.validateForm.bind(this), onClick: this.stopAtForm },
-          _react2.default.createElement('input', { name: 'name', type: 'text', className: "name-input" + (this.state.nameError ? " error" : ""), autoComplete: 'off', placeholder: 'Name', value: this.state.name, onChange: this.updateName.bind(this) }),
+          _react2.default.createElement(
+            'div',
+            { className: 'header' },
+            _react2.default.createElement(
+              'strong',
+              null,
+              'Full Name'
+            )
+          ),
+          _react2.default.createElement('input', { name: 'name', type: 'text', className: "name-input" + (this.state.nameError ? " error" : ""), autoComplete: 'off', placeholder: 'i.e. John Doe', value: this.state.name, onChange: this.updateName.bind(this) }),
+          _react2.default.createElement(
+            'div',
+            { className: 'header' },
+            _react2.default.createElement(
+              'strong',
+              null,
+              'Interests'
+            )
+          ),
           _react2.default.createElement(CategoriesSelector, { categories: this.categories, toggleCategory: this.toggleCategory.bind(this) }),
-          _react2.default.createElement('input', { name: 'number', type: 'text', className: "number-input" + (this.state.numberError ? " error" : ""), autoComplete: 'off', placeholder: 'Number with country code', value: this.state.number, onChange: this.updateNumber.bind(this) }),
-          _react2.default.createElement('input', { type: 'submit', className: 'submit', value: 'submit' })
+          _react2.default.createElement(
+            'div',
+            { className: 'header' },
+            _react2.default.createElement(
+              'strong',
+              null,
+              'Mobile Number'
+            ),
+            ' (with country code) ',
+            _react2.default.createElement('i', { className: 'fa fa-question-circle', 'aria-hidden': 'true' })
+          ),
+          _react2.default.createElement('input', { name: 'number', type: 'text', className: "number-input" + (this.state.numberError ? " error" : ""), autoComplete: 'off', placeholder: '+1 202 555 0191', value: this.state.number, onChange: this.updateNumber.bind(this) }),
+          _react2.default.createElement('input', { type: 'submit', className: 'submit', value: 'Submit' })
         )
       );
     }
