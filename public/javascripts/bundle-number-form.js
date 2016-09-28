@@ -100,6 +100,16 @@ var NumberForm = function (_React$Component) {
           { action: jsRoutes.controllers.RegistrationController.registerNumber().url, method: 'POST', className: 'number-form', onSubmit: this.validateForm.bind(this), onClick: this.stopAtForm },
           _react2.default.createElement(
             'div',
+            { className: 'mobile-close' },
+            'Get Started',
+            _react2.default.createElement(
+              'div',
+              { className: 'mobile-close-x', onClick: this.props.toggleSelf },
+              'X'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
             { className: 'header' },
             _react2.default.createElement(
               'strong',
@@ -148,7 +158,7 @@ var CategoriesSelector = function CategoriesSelector(props) {
   });
   return _react2.default.createElement(
     'div',
-    null,
+    { className: 'categories-container' },
     categories
   );
 };

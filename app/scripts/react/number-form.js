@@ -51,6 +51,7 @@ export default class NumberForm extends React.Component {
     return(
       <div ref={(container) => this.container = container} className="number-form-container" onClick={this.props.toggleSelf}>
         <form action={jsRoutes.controllers.RegistrationController.registerNumber().url} method="POST" className="number-form" onSubmit={this.validateForm.bind(this)} onClick={this.stopAtForm}>
+          <div className="mobile-close">Get Started<div className="mobile-close-x" onClick={this.props.toggleSelf}>X</div></div>
           <div className="header"><strong>Full Name</strong></div>
           <input name="name" type="text" className={"name-input" + (this.state.nameError ? " error" : "")} autoComplete="off" placeholder="i.e. John Doe" value={this.state.name} onChange={this.updateName.bind(this)} />
           <div className="header"><strong>Interests</strong></div>
@@ -67,7 +68,7 @@ export default class NumberForm extends React.Component {
 const CategoriesSelector = (props) => {
   var categories = props.categories.map((category, i) => <Category key={i} value={category} toggleCategory={props.toggleCategory} />);
   return (
-    <div>
+    <div className="categories-container">
       {categories}
     </div>
   );
