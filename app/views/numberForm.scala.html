@@ -1,4 +1,4 @@
-@()(implicit req: play.api.mvc.RequestHeader)
+@()(implicit req: play.api.mvc.RequestHeader, env: play.api.Environment)
 
 @main("Contact Locals") {
   <link href="@routes.Assets.versioned("stylesheets/number-form.css")" rel="stylesheet" media="screen">
