@@ -50,6 +50,7 @@
   padding: 10px 20px;
   color: #bbbdba;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .number-form-header {
@@ -97,6 +98,7 @@
   border: none;
   width: 100%;
   height: 38px;
+  cursor: pointer;
 }
 .tooltip {
   background-color: #ffffca;
