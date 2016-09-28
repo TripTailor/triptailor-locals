@@ -114,14 +114,6 @@ body {
   font-size: 18px;
   outline: none;
   margin-top: 17px;
-  display: block;
-  text-decoration: none;
-  line-height: 46px;
-  text-align: center;
-}
-.cta:hover, cta:active, .cta:visited {
-  color: #fff;
-  text-decoration: none;
 }
 @media (min-width: 768px) {
   .cta {

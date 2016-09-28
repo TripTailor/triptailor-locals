@@ -1,16 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import NumberForm from './number-form.js'
 
-const Index = (props) => (
-  <div>
-    <NavBar />
-    <Hero />
-    <HIW />
-    <Testimonials />
-    <Locals />
-    <Footer />
-  </div>
-);
+class Index extends React.Component {
+  constructor () {
+    super();
+  }
+  toggleForm() {
+    this.form.toggleDisplay();
+    document.body.classList.toggle("no-scroll");
+  }
+  render() {
+    return (
+      <div>
+        <NavBar />
+        <Hero toggleForm={this.toggleForm.bind(this)} />
+        <HIW />
+        <Testimonials />
+        <Locals />
+        <Footer />
+        <NumberForm ref={(form) => this.form = form} toggleSelf={this.toggleForm.bind(this)} />
+      </div>
+    );
+  }
+};
 
 const NavBar = (props) => (
   <div className="locals-navbar">
@@ -28,7 +41,7 @@ const Hero = (props) => (
         <div className="col-md-6">
           <div className="hero-subheader">Ask for restaurants, bars, anything in Guadalajara</div>
           <div className="hero-header">Chat with a local to make it happen</div>
-          <a href={jsRoutes.controllers.HomeController.numberForm().url} className="cta">Get started</a>
+          <button className="cta" onClick={props.toggleForm} >Get started</button>
         </div>
         <div className="col-md-6 col-whatsapp">
           <img src={jsRoutes.controllers.Assets.versioned("images/whatsapp.gif").url} className="whatsapp" />

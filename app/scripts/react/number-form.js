@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as util from '../util';
 
-class NumberForm extends React.Component {
-  constructor() {
-    super();
+export default class NumberForm extends React.Component {
+  constructor(props) {
+    super(props);
 
     this.state = {
       name: "",
@@ -41,14 +41,22 @@ class NumberForm extends React.Component {
     var categories = i < 0 ? [...this.state.selectedCategories, category] : [...this.state.selectedCategories.slice(0, i), ...this.state.selectedCategories.slice(i + 1)];
     this.setState({selectedCategories: categories, submitCategories: util.arrayToQuery(categories, "categories")});
   }
+  toggleDisplay() {
+    this.container.classList.toggle("visible");
+  }
+  stopAtForm(e) {
+    e.stopPropagation();
+  }
   render() {
     return(
-      <form action={jsRoutes.controllers.RegistrationController.registerNumber().url} method="POST" className="number-form" onSubmit={this.validateForm.bind(this)}>
-        <input name="name" type="text" className={"name-input" + (this.state.nameError ? " error" : "")} autoComplete="off" placeholder="Name" value={this.state.name} onChange={this.updateName.bind(this)} />
-        <CategoriesSelector categories={this.categories} toggleCategory={this.toggleCategory.bind(this)} />
-        <input name="number" type="text" className={"number-input" + (this.state.numberError ? " error" : "")} autoComplete="off" placeholder="Number with country code" value={this.state.number} onChange={this.updateNumber.bind(this)} />
-        <input type="submit" className="submit" value="submit" />
-      </form>
+      <div ref={(container) => this.container = container} className="number-form-container" onClick={this.props.toggleSelf}>
+        <form action={jsRoutes.controllers.RegistrationController.registerNumber().url} method="POST" className="number-form" onSubmit={this.validateForm.bind(this)} onClick={this.stopAtForm}>
+          <input name="name" type="text" className={"name-input" + (this.state.nameError ? " error" : "")} autoComplete="off" placeholder="Name" value={this.state.name} onChange={this.updateName.bind(this)} />
+          <CategoriesSelector categories={this.categories} toggleCategory={this.toggleCategory.bind(this)} />
+          <input name="number" type="text" className={"number-input" + (this.state.numberError ? " error" : "")} autoComplete="off" placeholder="Number with country code" value={this.state.number} onChange={this.updateNumber.bind(this)} />
+          <input type="submit" className="submit" value="submit" />
+        </form>
+      </div>
     );
   }
 };

@@ -21,8 +21,4 @@ class HomeController @Inject() extends Controller {
     Ok(views.html.index())
   }
 
-  def numberForm = Action { implicit request =>
-    Ok(views.html.numberForm())
-  }
-
 }

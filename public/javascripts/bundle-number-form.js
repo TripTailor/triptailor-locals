@@ -1,6 +1,10 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -30,10 +34,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var NumberForm = function (_React$Component) {
   _inherits(NumberForm, _React$Component);
 
-  function NumberForm() {
+  function NumberForm(props) {
     _classCallCheck(this, NumberForm);
 
-    var _this = _possibleConstructorReturn(this, (NumberForm.__proto__ || Object.getPrototypeOf(NumberForm)).call(this));
+    var _this = _possibleConstructorReturn(this, (NumberForm.__proto__ || Object.getPrototypeOf(NumberForm)).call(this, props));
 
     _this.state = {
       name: "",
@@ -72,15 +76,33 @@ var NumberForm = function (_React$Component) {
       this.setState({ selectedCategories: categories, submitCategories: util.arrayToQuery(categories, "categories") });
     }
   }, {
+    key: 'toggleDisplay',
+    value: function toggleDisplay() {
+      this.container.classList.toggle("visible");
+    }
+  }, {
+    key: 'stopAtForm',
+    value: function stopAtForm(e) {
+      e.stopPropagation();
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       return _react2.default.createElement(
-        'form',
-        { action: jsRoutes.controllers.RegistrationController.registerNumber().url, method: 'POST', className: 'number-form', onSubmit: this.validateForm.bind(this) },
-        _react2.default.createElement('input', { name: 'name', type: 'text', className: "name-input" + (this.state.nameError ? " error" : ""), autoComplete: 'off', placeholder: 'Name', value: this.state.name, onChange: this.updateName.bind(this) }),
-        _react2.default.createElement(CategoriesSelector, { categories: this.categories, toggleCategory: this.toggleCategory.bind(this) }),
-        _react2.default.createElement('input', { name: 'number', type: 'text', className: "number-input" + (this.state.numberError ? " error" : ""), autoComplete: 'off', placeholder: 'Number with country code', value: this.state.number, onChange: this.updateNumber.bind(this) }),
-        _react2.default.createElement('input', { type: 'submit', className: 'submit', value: 'submit' })
+        'div',
+        { ref: function ref(container) {
+            return _this2.container = container;
+          }, className: 'number-form-container', onClick: this.props.toggleSelf },
+        _react2.default.createElement(
+          'form',
+          { action: jsRoutes.controllers.RegistrationController.registerNumber().url, method: 'POST', className: 'number-form', onSubmit: this.validateForm.bind(this), onClick: this.stopAtForm },
+          _react2.default.createElement('input', { name: 'name', type: 'text', className: "name-input" + (this.state.nameError ? " error" : ""), autoComplete: 'off', placeholder: 'Name', value: this.state.name, onChange: this.updateName.bind(this) }),
+          _react2.default.createElement(CategoriesSelector, { categories: this.categories, toggleCategory: this.toggleCategory.bind(this) }),
+          _react2.default.createElement('input', { name: 'number', type: 'text', className: "number-input" + (this.state.numberError ? " error" : ""), autoComplete: 'off', placeholder: 'Number with country code', value: this.state.number, onChange: this.updateNumber.bind(this) }),
+          _react2.default.createElement('input', { type: 'submit', className: 'submit', value: 'submit' })
+        )
       );
     }
   }]);
@@ -88,6 +110,7 @@ var NumberForm = function (_React$Component) {
   return NumberForm;
 }(_react2.default.Component);
 
+exports.default = NumberForm;
 ;
 
 var CategoriesSelector = function CategoriesSelector(props) {
@@ -107,12 +130,12 @@ var Category = function (_React$Component2) {
   function Category(props) {
     _classCallCheck(this, Category);
 
-    var _this2 = _possibleConstructorReturn(this, (Category.__proto__ || Object.getPrototypeOf(Category)).call(this, props));
+    var _this3 = _possibleConstructorReturn(this, (Category.__proto__ || Object.getPrototypeOf(Category)).call(this, props));
 
-    _this2.state = {
+    _this3.state = {
       selected: false
     };
-    return _this2;
+    return _this3;
   }
 
   _createClass(Category, [{
