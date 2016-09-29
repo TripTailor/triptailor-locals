@@ -47,10 +47,8 @@ export default class NumberForm extends React.Component {
   }
   display() {
     this.container.classList.add("visible");
-    if(mixpanel) {
-      console.log("hey");
+    if(mixpanel)
       mixpanel.track("Get Started");
-    }
   }
   hide() {
     this.container.classList.remove("visible");

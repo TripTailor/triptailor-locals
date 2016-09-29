@@ -348,7 +348,11 @@ var NumberForm = function (_React$Component) {
     value: function validateForm(e) {
       this.setState({ nameError: this.state.name === "" });
       this.setState({ numberError: this.state.number === "" });
-      if (this.state.name === "" || this.state.number === "") e.preventDefault();
+      if (this.state.name === "" || this.state.number === "") e.preventDefault();else if (mixpanel) mixpanel.track("Submit Form", {
+        "NAME": this.state.name,
+        "CATEGORY": this.state.selectedCategories,
+        "PHONE NUMBER": this.state.number
+      });
     }
   }, {
     key: 'toggleCategory',
@@ -360,12 +364,13 @@ var NumberForm = function (_React$Component) {
     key: 'display',
     value: function display() {
       this.container.classList.add("visible");
+      if (mixpanel) mixpanel.track("Get Started");
     }
   }, {
     key: 'hide',
     value: function hide() {
       this.container.classList.remove("visible");
-      if (typeof mixpanel !== 'undefined') mixpanel.track("Exit Get Started", {
+      if (mixpanel) mixpanel.track("Exit Get Started", {
         "NAME": this.state.name,
         "CATEGORY": this.state.selectedCategories,
         "PHONE NUMBER": this.state.number
