@@ -34,7 +34,7 @@ export default class NumberForm extends React.Component {
     this.setState({numberError: this.state.number === ""});
     if(this.state.name === "" || this.state.number === "")
       e.preventDefault();
-    else if(typeof mixpanel !== 'undefined')
+    else if(mixpanel)
       mixpanel.track("Submit Form", {
         "NAME": this.state.name,
         "CATEGORY": this.state.selectedCategories,
@@ -47,12 +47,14 @@ export default class NumberForm extends React.Component {
   }
   display() {
     this.container.classList.add("visible");
-    if(typeof mixpanel !== 'undefined')
+    if(mixpanel) {
+      console.log("hey");
       mixpanel.track("Get Started");
+    }
   }
   hide() {
     this.container.classList.remove("visible");
-    if(typeof mixpanel !== 'undefined')
+    if(mixpanel)
       mixpanel.track("Exit Get Started", {
         "NAME": this.state.name,
         "CATEGORY": this.state.selectedCategories,
