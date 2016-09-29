@@ -2,10 +2,11 @@ package controllers
 
 import javax.inject.{Inject, Singleton}
 
+import play.api.Environment
 import play.api.data.{Form, Forms}
 import play.api.i18n.{Lang, Messages, MessagesApi}
 import play.api.libs.mailer.MailerClient
-import play.api.mvc.{Action, Controller}
+import play.api.mvc.{Action, Controller, RequestHeader}
 import services.EmailService
 
 import scala.concurrent.Future
@@ -13,7 +14,7 @@ import scala.concurrent.Future
 case class ContactParams(name: String, age: Int, email: String, number: String, text: String)
 
 @Singleton
-class RegistrationController @Inject()(mailer: MailerClient, msgsApi: MessagesApi) extends Controller {
+class RegistrationController @Inject()(mailer: MailerClient, msgsApi: MessagesApi)(implicit env: Environment) extends Controller {
 
   def registerNumber = Action.async { implicit request =>
     numberMapping.bindFromRequest.fold(
@@ -46,11 +47,11 @@ class RegistrationController @Inject()(mailer: MailerClient, msgsApi: MessagesAp
     )(EmailForm.apply)(EmailForm.unapply)
   )
 
-  private def registerContact(params: RegistrationData) = {
+  private def registerContact(params: RegistrationData)(implicit req: RequestHeader) = {
     val ec = scala.concurrent.ExecutionContext.global
     val service = new EmailService(params, mailer)(ec)
     service.send().map {
-      case true  => Ok
+      case true  => Ok(views.html.registerConfirmation())
       case false => ServiceUnavailable
     }(ec)
   }
