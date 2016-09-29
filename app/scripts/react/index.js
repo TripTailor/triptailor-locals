@@ -17,25 +17,15 @@ class Index extends React.Component {
   render() {
     return (
       <div>
-        <NavBar />
         <Hero showForm={this.showForm.bind(this)} />
         <HIW />
         <Testimonials />
         <Locals />
-        <Footer />
         <NumberForm ref={(form) => this.form = form} hideSelf={this.hideForm.bind(this)} />
       </div>
     );
   }
 };
-
-const NavBar = (props) => (
-  <div className="locals-navbar">
-    {/* <div className="navbar-link"><a href={jsRoutes.controllers.HomeController.numberForm().url}>Get Started</a></div> */}
-    {/* <div className="navbar-link">Contact Us</div> */}
-    <div className="brand"><a href={jsRoutes.controllers.HomeController.index().url}>contact<span className="brand-locals">locals</span>.com</a></div>
-  </div>
-);
 
 const Hero = (props) => (
   <div className="hero">
@@ -120,10 +110,6 @@ const Locals = (props) => (
       </div>
     </div>
   </div>
-);
-
-const Footer = (props) => (
-  <div className="footer">© Contact Locals 2016.</div>
 );
 
 ReactDOM.render(<Index />, document.getElementById("content"));

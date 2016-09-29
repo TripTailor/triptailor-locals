@@ -52,12 +52,10 @@ var Index = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(NavBar, null),
         _react2.default.createElement(Hero, { showForm: this.showForm.bind(this) }),
         _react2.default.createElement(HIW, null),
         _react2.default.createElement(Testimonials, null),
         _react2.default.createElement(Locals, null),
-        _react2.default.createElement(Footer, null),
         _react2.default.createElement(_numberForm2.default, { ref: function ref(form) {
             return _this2.form = form;
           }, hideSelf: this.hideForm.bind(this) })
@@ -69,28 +67,6 @@ var Index = function (_React$Component) {
 }(_react2.default.Component);
 
 ;
-
-var NavBar = function NavBar(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: 'locals-navbar' },
-    _react2.default.createElement(
-      'div',
-      { className: 'brand' },
-      _react2.default.createElement(
-        'a',
-        { href: jsRoutes.controllers.HomeController.index().url },
-        'contact',
-        _react2.default.createElement(
-          'span',
-          { className: 'brand-locals' },
-          'locals'
-        ),
-        '.com'
-      )
-    )
-  );
-};
 
 var Hero = function Hero(props) {
   return _react2.default.createElement(
@@ -300,14 +276,6 @@ var Locals = function Locals(props) {
         )
       )
     )
-  );
-};
-
-var Footer = function Footer(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: 'footer' },
-    '© Contact Locals 2016.'
   );
 };
 

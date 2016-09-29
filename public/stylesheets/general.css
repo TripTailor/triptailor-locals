@@ -1,0 +1,56 @@
+.locals-navbar {
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-left: 42px;
+  padding-right: 42px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  text-align: center;
+}
+@media (min-width: 400px) {
+  .locals-navbar {
+    text-align: left;
+    padding-right: 21px;
+  }
+}
+.brand a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: #fff;
+  line-height: 60px;
+  text-decoration: none;
+}
+.brand-locals {
+  color: #f73f62;
+}
+.navbar-link {
+  float: right;
+  padding: 0 21px;
+  display: none;
+}
+.navbar-link a {
+  color: #fff;
+  line-height: 60px;
+  text-decoration: none;
+}
+@media (min-width: 400px) {
+  .navbar-link {
+    display: block;
+  }
+}
+
+.footer {
+  background-color: #323940;
+  padding: 15px 42px;
+  color: rgba(255, 255, 255, 0.4);
+}
+@media (min-width: 768px) {
+  .footer {
+    height: 56px;
+    line-height: 56px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
