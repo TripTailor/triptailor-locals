@@ -44,8 +44,7 @@ var NumberForm = function (_React$Component) {
       selectedCategories: [],
       number: "",
       nameError: false,
-      numberError: false,
-      submitCategories: ""
+      numberError: false
     };
     _this.categories = ["food", "nightlife", "culture", "sightseeing", "shopping", "events", "other"];
     return _this;
@@ -72,13 +71,22 @@ var NumberForm = function (_React$Component) {
     key: 'toggleCategory',
     value: function toggleCategory(category) {
       var i = this.state.selectedCategories.indexOf(category);
-      var categories = i < 0 ? [].concat(_toConsumableArray(this.state.selectedCategories), [category]) : [].concat(_toConsumableArray(this.state.selectedCategories.slice(0, i)), _toConsumableArray(this.state.selectedCategories.slice(i + 1)));
-      this.setState({ selectedCategories: categories, submitCategories: util.arrayToQuery(categories, "categories") });
+      this.setState({ selectedCategories: i < 0 ? [].concat(_toConsumableArray(this.state.selectedCategories), [category]) : [].concat(_toConsumableArray(this.state.selectedCategories.slice(0, i)), _toConsumableArray(this.state.selectedCategories.slice(i + 1))) });
     }
   }, {
-    key: 'toggleDisplay',
-    value: function toggleDisplay() {
-      this.container.classList.toggle("visible");
+    key: 'display',
+    value: function display() {
+      this.container.classList.add("visible");
+    }
+  }, {
+    key: 'hide',
+    value: function hide() {
+      this.container.classList.remove("visible");
+      if (typeof mixpanel !== 'undefined') mixpanel.track("Exit Get Started", {
+        "NAME": this.state.name,
+        "CATEGORY": this.state.selectedCategories,
+        "PHONE NUMBER": this.state.number
+      });
     }
   }, {
     key: 'stopAtForm',
@@ -99,7 +107,7 @@ var NumberForm = function (_React$Component) {
         'div',
         { ref: function ref(container) {
             return _this2.container = container;
-          }, className: 'number-form-container', onClick: this.props.toggleSelf },
+          }, className: 'number-form-container', onClick: this.props.hideSelf },
         _react2.default.createElement(
           'form',
           { action: jsRoutes.controllers.RegistrationController.registerNumber().url, method: 'POST', className: 'number-form', onSubmit: this.validateForm.bind(this), onClick: this.stopAtForm },
@@ -109,7 +117,7 @@ var NumberForm = function (_React$Component) {
             'Get Started',
             _react2.default.createElement(
               'div',
-              { className: 'mobile-close-x', onClick: this.props.toggleSelf },
+              { className: 'mobile-close-x', onClick: this.props.hideSelf },
               'X'
             )
           ),
@@ -193,6 +201,7 @@ var Category = function (_React$Component2) {
     key: 'toggleCategory',
     value: function toggleCategory(e) {
       this.setState({ selected: !this.state.selected });
+      this.props.toggleCategory(e.target.value);
     }
   }, {
     key: 'render',
@@ -201,8 +210,7 @@ var Category = function (_React$Component2) {
         'label',
         { className: "category" + (this.state.selected ? " selected" : "") },
         _react2.default.createElement('input', { name: 'categories[]', type: 'checkbox', className: 'category-box', checked: this.state.selected, value: this.props.value, onChange: this.toggleCategory.bind(this) }),
-        this.props.value,
-        ' '
+        this.props.value
       );
     }
   }]);

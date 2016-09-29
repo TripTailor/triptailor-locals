@@ -6,20 +6,24 @@ class Index extends React.Component {
   constructor () {
     super();
   }
-  toggleForm() {
-    this.form.toggleDisplay();
-    document.body.classList.toggle("no-scroll");
+  showForm() {
+    this.form.display();
+    document.body.classList.add("no-scroll");
+  }
+  hideForm() {
+    this.form.hide();
+    document.body.classList.remove("no-scroll");
   }
   render() {
     return (
       <div>
         <NavBar />
-        <Hero toggleForm={this.toggleForm.bind(this)} />
+        <Hero showForm={this.showForm.bind(this)} />
         <HIW />
         <Testimonials />
         <Locals />
         <Footer />
-        <NumberForm ref={(form) => this.form = form} toggleSelf={this.toggleForm.bind(this)} />
+        <NumberForm ref={(form) => this.form = form} hideSelf={this.hideForm.bind(this)} />
       </div>
     );
   }
@@ -41,7 +45,7 @@ const Hero = (props) => (
         <div className="col-md-6">
           <div className="hero-subheader">Ask for restaurants, bars, anything in Guadalajara</div>
           <div className="hero-header">Chat with a local to make it happen</div>
-          <button className="cta" onClick={props.toggleForm} >Get started</button>
+          <button className="cta" onClick={props.showForm} >Get started</button>
         </div>
         <div className="col-md-6 col-whatsapp">
           <img src={jsRoutes.controllers.Assets.versioned("images/whatsapp.gif").url} className="whatsapp" />

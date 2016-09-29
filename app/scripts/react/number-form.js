@@ -11,8 +11,7 @@ export default class NumberForm extends React.Component {
       selectedCategories: [],
       number: "",
       nameError: false,
-      numberError: false,
-      submitCategories: ""
+      numberError: false
     };
     this.categories = [
       "food",
@@ -38,11 +37,19 @@ export default class NumberForm extends React.Component {
   }
   toggleCategory(category) {
     var i = this.state.selectedCategories.indexOf(category);
-    var categories = i < 0 ? [...this.state.selectedCategories, category] : [...this.state.selectedCategories.slice(0, i), ...this.state.selectedCategories.slice(i + 1)];
-    this.setState({selectedCategories: categories, submitCategories: util.arrayToQuery(categories, "categories")});
+    this.setState({selectedCategories: i < 0 ? [...this.state.selectedCategories, category] : [...this.state.selectedCategories.slice(0, i), ...this.state.selectedCategories.slice(i + 1)]});
   }
-  toggleDisplay() {
-    this.container.classList.toggle("visible");
+  display() {
+    this.container.classList.add("visible");
+  }
+  hide() {
+    this.container.classList.remove("visible");
+    if(typeof mixpanel !== 'undefined')
+      mixpanel.track("Exit Get Started", {
+        "NAME": this.state.name,
+        "CATEGORY": this.state.selectedCategories,
+        "PHONE NUMBER": this.state.number
+      });
   }
   stopAtForm(e) {
     e.stopPropagation();
@@ -52,9 +59,9 @@ export default class NumberForm extends React.Component {
   }
   render() {
     return(
-      <div ref={(container) => this.container = container} className="number-form-container" onClick={this.props.toggleSelf}>
+      <div ref={(container) => this.container = container} className="number-form-container" onClick={this.props.hideSelf}>
         <form action={jsRoutes.controllers.RegistrationController.registerNumber().url} method="POST" className="number-form" onSubmit={this.validateForm.bind(this)} onClick={this.stopAtForm}>
-          <div className="mobile-close">Get Started<div className="mobile-close-x" onClick={this.props.toggleSelf}>X</div></div>
+          <div className="mobile-close">Get Started<div className="mobile-close-x" onClick={this.props.hideSelf}>X</div></div>
           <div className="number-form-header"><strong>Full Name</strong></div>
           <input name="name" type="text" className={"name-input" + (this.state.nameError ? " error" : "")} autoComplete="off" placeholder="i.e. John Doe" value={this.state.name} onChange={this.updateName.bind(this)} />
           <div className="number-form-header"><strong>Interests</strong></div>
@@ -87,10 +94,11 @@ class Category extends React.Component {
   }
   toggleCategory(e) {
     this.setState({selected: !this.state.selected});
+    this.props.toggleCategory(e.target.value);
   }
   render() {
     return (
-      <label className={"category" + (this.state.selected ? " selected" : "")}><input name="categories[]" type="checkbox" className="category-box" checked={this.state.selected} value={this.props.value} onChange={this.toggleCategory.bind(this)} />{this.props.value} </label>
+      <label className={"category" + (this.state.selected ? " selected" : "")}><input name="categories[]" type="checkbox" className="category-box" checked={this.state.selected} value={this.props.value} onChange={this.toggleCategory.bind(this)} />{this.props.value}</label>
     );
   }
 }
