@@ -382,6 +382,14 @@ var NumberForm = function (_React$Component) {
       this.tooltip.classList.toggle("tooltip-visible");
     }
   }, {
+    key: 'toggleBlankSpace',
+    value: function toggleBlankSpace() {
+      if (window.innerWidth < 500) {
+        this.blankSpace.classList.toggle("visible");
+        this.form.scrollTop = 340;
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -393,7 +401,9 @@ var NumberForm = function (_React$Component) {
           }, className: 'number-form-container', onClick: this.props.hideSelf },
         _react2.default.createElement(
           'form',
-          { action: jsRoutes.controllers.RegistrationController.registerNumber().url, method: 'POST', className: 'number-form', onSubmit: this.validateForm.bind(this), onClick: this.stopAtForm },
+          { ref: function ref(form) {
+              return _this2.form = form;
+            }, action: jsRoutes.controllers.RegistrationController.registerNumber().url, method: 'POST', className: 'number-form', onSubmit: this.validateForm.bind(this), onClick: this.stopAtForm },
           _react2.default.createElement(
             'div',
             { className: 'mobile-close' },
@@ -442,8 +452,11 @@ var NumberForm = function (_React$Component) {
               'A local will get in touch with you'
             )
           ),
-          _react2.default.createElement('input', { name: 'number', type: 'text', className: "number-input" + (this.state.numberError ? " error" : ""), autoComplete: 'off', placeholder: '+1 202 555 0191', value: this.state.number, onChange: this.updateNumber.bind(this) }),
-          _react2.default.createElement('input', { type: 'submit', className: 'number-form-submit', value: 'Submit' })
+          _react2.default.createElement('input', { name: 'number', type: 'text', className: "number-input" + (this.state.numberError ? " error" : ""), autoComplete: 'off', placeholder: '+1 202 555 0191', value: this.state.number, onChange: this.updateNumber.bind(this), onFocus: this.toggleBlankSpace.bind(this), onBlur: this.toggleBlankSpace.bind(this) }),
+          _react2.default.createElement('input', { type: 'submit', className: 'number-form-submit', value: 'Submit' }),
+          _react2.default.createElement('div', { ref: function ref(div) {
+              return _this2.blankSpace = div;
+            }, className: 'blank-space' })
         )
       );
     }

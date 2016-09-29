@@ -16,6 +16,7 @@
   right: 0;
   bottom: 0;
   left: 0;
+  overflow-y: scroll;
 }
 @media (min-width: 500px) {
   .number-form {
@@ -118,6 +119,11 @@
   }
 }
 
+.blank-space {
+  display: none;
+  height: 340px;
+  width: 100%;
+}
 .error {
   border: 2px solid red;
 }
