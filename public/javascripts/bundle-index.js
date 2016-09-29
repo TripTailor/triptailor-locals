@@ -225,8 +225,8 @@ var Locals = function Locals(props) {
           ),
           _react2.default.createElement(
             'div',
-            { className: 'local-categories' },
-            'party, beer & technology'
+            { className: 'local-description' },
+            'Aside from traveling, you can usually find Luis drinking craft beer or dancing at House music venues.'
           )
         ),
         _react2.default.createElement(
@@ -240,8 +240,8 @@ var Locals = function Locals(props) {
           ),
           _react2.default.createElement(
             'div',
-            { className: 'local-categories' },
-            'architecture, food & running'
+            { className: 'local-description' },
+            'Serguei has combined his interest in Design and good food to always know the most delightful places to eat.'
           )
         ),
         _react2.default.createElement(
@@ -255,8 +255,8 @@ var Locals = function Locals(props) {
           ),
           _react2.default.createElement(
             'div',
-            { className: 'local-categories' },
-            'coffee, local design & kitsch'
+            { className: 'local-description' },
+            'Whenever someone wants to get a good authentic coffee, they go to Lorena to hear the best options.'
           )
         ),
         _react2.default.createElement(
@@ -270,8 +270,8 @@ var Locals = function Locals(props) {
           ),
           _react2.default.createElement(
             'div',
-            { className: 'local-categories' },
-            'food, music & art'
+            { className: 'local-description' },
+            'As a member of a couple of local music bands, Gustavo is always up to date with the trendiest places.'
           )
         )
       )

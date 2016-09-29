@@ -90,22 +90,22 @@ const Locals = (props) => (
         <div className="col-md-3 local-profile">
           <img src={jsRoutes.controllers.Assets.versioned("images/photo-luis.png").url} className="local-img" />
           <div className="local-name">Luis Galeana</div>
-          <div className="local-categories">party, beer & technology</div>
+          <div className="local-description">Aside from traveling, you can usually find Luis drinking craft beer or dancing at House music venues.</div>
         </div>
         <div className="col-md-3 local-profile">
           <img src={jsRoutes.controllers.Assets.versioned("images/photo-cheky.png").url} className="local-img" />
           <div className="local-name">Serguei Orozco</div>
-          <div className="local-categories">architecture, food & running</div>
+          <div className="local-description">Serguei has combined his interest in Design and good food to always know the most delightful places to eat.</div>
         </div>
         <div className="col-md-3 local-profile">
           <img src={jsRoutes.controllers.Assets.versioned("images/photo-lore.png").url} className="local-img" />
           <div className="local-name">Lorena Moreno</div>
-          <div className="local-categories">coffee, local design & kitsch</div>
+          <div className="local-description">Whenever someone wants to get a good authentic coffee, they go to Lorena to hear the best options.</div>
         </div>
         <div className="col-md-3 local-profile">
           <img src={jsRoutes.controllers.Assets.versioned("images/photo-gus.png").url} className="local-img" />
           <div className="local-name">Gustavo Dávila</div>
-          <div className="local-categories">food, music & art</div>
+          <div className="local-description">As a member of a couple of local music bands, Gustavo is always up to date with the trendiest places.</div>
         </div>
       </div>
     </div>

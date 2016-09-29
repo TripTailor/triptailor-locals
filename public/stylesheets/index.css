@@ -231,7 +231,7 @@
   color: rgba(0, 0, 0, 0.75);
   text-align: center;
 }
-.local-categories {
-  color: rgba(0, 0, 0, 0.55);
+.local-description {
+  margin-top: 6px;
   text-align: center;
 }
