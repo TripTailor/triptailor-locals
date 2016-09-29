@@ -1,5 +1,8 @@
-body {
-  font-family: 'Open Sans', sans-serif;
+.locals-navbar {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  z-index: 1;
 }
 
 .hero {

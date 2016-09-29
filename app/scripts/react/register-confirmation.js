@@ -2,7 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const RegisterConfirmation = (props) => (
-  <div></div>
+  <div className="confirmation-container">
+    <div className="thanks">Thanks for registering!</div>
+    <div className="title">A local will be assigned and will get in touch with you soon.</div>
+  </div>
 );
 
 

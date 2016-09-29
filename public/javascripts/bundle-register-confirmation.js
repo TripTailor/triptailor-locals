@@ -12,7 +12,20 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var RegisterConfirmation = function RegisterConfirmation(props) {
-  return _react2.default.createElement('div', null);
+  return _react2.default.createElement(
+    'div',
+    { className: 'confirmation-container' },
+    _react2.default.createElement(
+      'div',
+      { className: 'thanks' },
+      'Thanks for registering!'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'title' },
+      'A local will be assigned and will get in touch with you soon.'
+    )
+  );
 };
 
 _reactDom2.default.render(_react2.default.createElement(RegisterConfirmation, null), document.getElementById("content"));

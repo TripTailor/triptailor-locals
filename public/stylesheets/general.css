@@ -1,12 +1,13 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .locals-navbar {
+  background-color: #000;
   height: 60px;
-  background-color: rgba(0, 0, 0, 0.5);
   padding-left: 42px;
   padding-right: 42px;
-  position: absolute;
-  top: 0;
   width: 100%;
-  z-index: 1;
   text-align: center;
 }
 @media (min-width: 400px) {
