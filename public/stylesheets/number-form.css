@@ -29,6 +29,7 @@
     bottom: auto;
     transform: translate(-50%, -50%);
     border-radius: 4px;
+    overflow-y: visible;
   }
 }
 .mobile-close {
