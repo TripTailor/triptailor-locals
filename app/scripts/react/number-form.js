@@ -34,6 +34,12 @@ export default class NumberForm extends React.Component {
     this.setState({numberError: this.state.number === ""});
     if(this.state.name === "" || this.state.number === "")
       e.preventDefault();
+    else if(typeof mixpanel !== 'undefined')
+      mixpanel.track("Submit Form", {
+        "NAME": this.state.name,
+        "CATEGORY": this.state.selectedCategories,
+        "PHONE NUMBER": this.state.number
+      });
   }
   toggleCategory(category) {
     var i = this.state.selectedCategories.indexOf(category);
@@ -41,6 +47,8 @@ export default class NumberForm extends React.Component {
   }
   display() {
     this.container.classList.add("visible");
+    if(typeof mixpanel !== 'undefined')
+      mixpanel.track("Get Started");
   }
   hide() {
     this.container.classList.remove("visible");
