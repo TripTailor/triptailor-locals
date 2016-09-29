@@ -30,6 +30,8 @@ class RegistrationController @Inject()(mailer: MailerClient, msgsApi: MessagesAp
     )
   }
 
+  def confirmation = Action(implicit req => Ok(views.html.registerConfirmation()))
+
   private val numberMapping = Form(
     Forms.mapping(
       "name"       -> Forms.nonEmptyText,
@@ -51,7 +53,7 @@ class RegistrationController @Inject()(mailer: MailerClient, msgsApi: MessagesAp
     val ec = scala.concurrent.ExecutionContext.global
     val service = new EmailService(params, mailer)(ec)
     service.send().map {
-      case true  => Ok(views.html.registerConfirmation())
+      case true  => Redirect(routes.RegistrationController.confirmation)
       case false => ServiceUnavailable
     }(ec)
   }
