@@ -58,7 +58,7 @@
 .number-form-header {
   margin-top: 20px;
 }
-.number-form input[type="text"] {
+.name-input, .number-input {
   border: solid 1px #cbcdca;
   padding: 8px 10px;
   width: 100%;
